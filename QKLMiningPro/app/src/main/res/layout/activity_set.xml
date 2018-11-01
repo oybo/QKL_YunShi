@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg_color"
+    android:orientation="vertical">
+
+    <com.qkl.online.mining.app.ui.view.HeaderView
+        android:id="@+id/activity_set_headerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/set_userinfo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/shape_game_item_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dip">
+
+        <ImageView
+            android:layout_width="28dip"
+            android:layout_height="28dip"
+            android:src="@drawable/set_icon_gerenxinxi" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_weight="1"
+            android:text="@string/set_userinfo_page_title"
+            android:textColor="@color/color_ffffff"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sc_more" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/set_login_password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/shape_game_item_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dip">
+
+        <ImageView
+            android:layout_width="28dip"
+            android:layout_height="28dip"
+            android:src="@drawable/set_icon_xiugai" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_weight="1"
+            android:text="@string/act_set_update_password_title_txt"
+            android:textColor="@color/color_ffffff"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sc_more" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/set_pay_password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/shape_game_item_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dip">
+
+        <ImageView
+            android:layout_width="28dip"
+            android:layout_height="28dip"
+            android:src="@drawable/set_icon_zhifumim" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_weight="1"
+            android:text="@string/act_set_update_paypassword_title_txt"
+            android:textColor="@color/color_ffffff"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sc_more" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/set_wallet_address_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/shape_game_item_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dip">
+
+        <ImageView
+            android:layout_width="28dip"
+            android:layout_height="28dip"
+            android:src="@drawable/set_icon_dizhi" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_weight="1"
+            android:text="@string/act_set_update_wallet_address_title_txt"
+            android:textColor="@color/color_ffffff"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sc_more" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/set_version_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/shape_game_item_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dip">
+
+        <ImageView
+            android:layout_width="28dip"
+            android:layout_height="28dip"
+            android:visibility="gone"
+            android:src="@drawable/planet_icon_yun" />
+
+        <TextView
+            android:id="@+id/set_version_txt"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_weight="1"
+            android:text="@string/set_version_txt"
+            android:textColor="@color/color_ffffff"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sc_more"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

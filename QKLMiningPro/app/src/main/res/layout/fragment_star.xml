@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qkl.online.mining.app.ui.view.VpSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_star_refreshlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/planet_bg">
+
+        <View
+            android:id="@+id/fragment_star_titleview"
+            android:layout_width="1dip"
+            android:layout_height="0dip" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_star_titleview"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip">
+
+            <TextView
+                android:id="@+id/fragment_star_user_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="28dip"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dip"
+                android:background="@drawable/shape_game_item_bg"
+                android:gravity="center"
+                android:paddingLeft="45dip"
+                android:paddingRight="15dip"
+                android:textColor="@color/color_ffffff"
+                android:textSize="13sp" />
+
+            <com.qkl.online.mining.app.ui.view.CircleImageView
+                android:id="@+id/fragment_star_user_icon"
+                android:layout_width="36dip"
+                android:layout_height="36dip"
+                android:src="@drawable/my_icon_wodejiedian" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/fragment_star_parities_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/fragment_star_titleview"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/shape_game_item_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="3dip"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:paddingTop="3dip">
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:src="@drawable/planet_icon_yun" />
+
+            <TextView
+                android:id="@+id/fragment_star_parities_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text="@string/yun_usdt_exchange_txt"
+                android:textColor="@color/color_ffffff"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fragment_star_myyun_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/fragment_star_parities_layout"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/shape_game_item_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="3dip"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:paddingTop="3dip">
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="25dip"
+                android:src="@drawable/planet_icon_yunt" />
+
+            <TextView
+                android:id="@+id/fragment_star_myyun_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text="@string/yunt_my_money_txt"
+                android:textColor="@color/color_ffffff"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/fragment_mystar_title_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_star_myyun_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:text="@string/main_star_mysytar_txt"
+            android:textColor="@color/color_ffffff"
+            android:textSize="16sp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fragment_star_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="170dip"
+            android:layout_alignParentBottom="true" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/fragment_star_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/fragment_star_recyclerview"
+            android:layout_below="@id/fragment_mystar_title_txt"
+            android:layout_marginTop="-20dip" />
+
+        <TextView
+            android:id="@+id/fragment_star_make"
+            android:layout_width="130dip"
+            android:layout_height="30dip"
+            android:layout_above="@id/fragment_star_recyclerview"
+            android:gravity="center"
+            android:text="@string/public_star_make_txt"
+            android:textColor="@color/color_FFFF31"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/fragment_star_canbuy_number_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/fragment_star_make"
+            android:layout_marginLeft="10dip"
+            android:text="@string/public_canbuy_number_txt"
+            android:textColor="@color/color_ffffff"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</com.qkl.online.mining.app.ui.view.VpSwipeRefreshLayout>

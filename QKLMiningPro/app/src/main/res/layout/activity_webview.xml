@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff"
+    android:orientation="vertical">
+
+    <com.qkl.online.mining.app.ui.view.HeaderView
+        android:id="@+id/activity_webview_headerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.qkl.online.mining.app.ui.view.browse.ProgressBarWebView
+        android:id="@+id/activity_webview_webview"
+        style="@style/NumberProgressBar_Default"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

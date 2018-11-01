@@ -1,0 +1,6 @@
+<resources>
+
+    <!--   主界面底部高度     -->
+    <dimen name="main_bottom_edit_height">50dip</dimen>
+
+</resources>

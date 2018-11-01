@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.lazy.viewpager.view.viewpager.SViewPager
+        android:id="@+id/fragment_main_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <View style="@style/view_line" />
+
+    <com.lazy.viewpager.view.indicator.FixedIndicatorView
+        android:id="@+id/fragment_main_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_bottom_edit_height"
+        android:background="@color/color_000000" />
+
+</LinearLayout>

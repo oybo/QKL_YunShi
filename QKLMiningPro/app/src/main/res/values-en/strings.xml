@@ -1,0 +1,244 @@
+<resources>
+    <string name="app_name">Marble Planet</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="progress_dialog_holdon">Please Wait</string>
+
+    <!--    弹出框提示      -->
+    <string name="tips_tip_title_txt">Tip</string>
+    <string name="main_cancel">Cancel</string>
+    <string name="main_confirm">Confirm</string>
+    <string name="game_is_exit_txt">Exit the game?</string>
+
+    <!--    动态申请权限      -->
+    <string name="permissions_title">The following permissions need to be granted for normal use</string>
+    <string name="permissions_message">·To modify or delete the contents of the SD card\n·you read you the contents of the SD card</string>
+    <string name="permissions_get_txt">Grant permissions</string>
+    <string name="permissions_exit_txt">Quit the application</string>
+
+    <!--    首页      -->
+    <string name="main_tab_home">Home</string>
+    <string name="main_tab_star">Planet</string>
+    <string name="main_tab_game">Game</string>
+    <string name="main_tab_userinfo">Personal</string>
+    <string name="main_star_mysytar_txt">My planet</string>
+    <string name="main_star_mysytar_not_available_txt">You haven\'t buy planet</string>
+    <string name="main_shengyu_kj_txt">My mill: %1$s (%2$s) remaining</string>
+    <string name="main_mywallet_txt">My wallet</string>
+    <string name="main_ynu_txt">YUNT</string>
+    <string name="main_parities_ynu_txt">Exchange YUN</string>
+    <string name="main_parities_ynut_txt">Exchange YUNT</string>
+    <string name="parities_ynu_input_number_txt">Please enter the number of YUNT,at least%1$s个</string>
+    <string name="parities_ynu_input_number_number_check_txt">YUNT number may not be less than %1$s</string>
+    <string name="parities_ynu_need_yunt_txt">(Estimated for%1$s个YUN)</string>
+    <string name="parities_ynu_charge_txt">Poundage</string>
+    <string name="parities_ynu_charge_value_txt">%1$sYUNT</string>
+    <string name="parities_ynu_atexchange_txt">Exchange Rate：%1$s</string>
+    <string name="parities_ynu_in_address_txt">To YUN address:</string>
+    <string name="parities_ynu_str_in_address_txt">To YUN address：%1$s</string>
+    <string name="parities_ynu_in_password_txt">Enter the password for payment</string>
+    <string name="parities_ynu_in_tips_txt">Tip: minimum%1$syunt exchange value</string>
+    <string name="parities_ynu_success_txt">For successful</string>
+    <string name="parities_ynu_affirm_txt">Confirm the change</string>
+    <string name="parities_ynu_record_txt">For Record</string>
+    <string name="parities_ynut_input_number_txt">Please enter the number of YNU</string>
+    <string name="parities_ynut_need_yunt_txt">(Estimated for % 1 $s YUNT)</string>
+    <string name="parities_ynut_in_tips_txt">(Note: please send the corresponding YUN, turn to the above address, stay YUN to the address confirmed automatically filling the YUNT into account)</string>
+    <string name="home_kc_dump_energy_txt">YUN Data</string>
+    <string name="home_kc_transaction_record_txt">Records of mining pool transactions</string>
+    <string name="home_kc_suanli_txt">Marble record</string>
+    <string name="home_kc_ynm_move_towards_txt">YUN Price To</string>
+    <string name="yun_usdt_exchange_txt">YUN/USDT：%1$s$</string>
+    <string name="yunt_my_money_txt">My YUNT：%1$s</string>
+    <string name="game_today_task_txt">Today\'s task</string>
+
+    <!--    注册      -->
+    <string name="register_page_title">Registered</string>
+    <string name="register_page_welcome">Welcome to the marble planet</string>
+    <string name="register_input_email">Please enter the email address</string>
+    <string name="register_get_code">Get Code</string>
+    <string name="register_input_code">Please enter the verification code</string>
+    <string name="register_input_password">Please enter a password</string>
+    <string name="register_input_tribute">Please enter the recommended code</string>
+    <string name="register_email_unable_null">Email cannot be empty</string>
+    <string name="register_code_unable_null">Verification code cannot be empty</string>
+    <string name="register_password_unable_null">Password cannot be empty</string>
+    <string name="register_send_msg_success">E-mail verification code sent successfully</string>
+    <string name="register_send_msg_failed">Failed to get verification code</string>
+    <string name="register_success">Registered successfully</string>
+    <string name="register_failed">Registration failed</string>
+    <string name="register_xieyi_select">You read and agree to marble ball stars with our talks</string>
+    <string name="register_xieyi_tip">The user agrees to marble planet Agreement</string>
+    <string name="main_exit_app_tips_tx">Again according to the exit</string>
+
+    <!--    登录      -->
+    <string name="login_page_title">Marble planet login</string>
+    <string name="login_input_loginname">Please enter the email address</string>
+    <string name="login_input_password">Please enter a password</string>
+    <string name="login_login">Login</string>
+    <string name="login_forget_password">Forgot password</string>
+    <string name="login_success">Login successful</string>
+    <string name="login_failed">Login failed</string>
+    <string name="login_loading_in">Is the login</string>
+
+    <!--    忘记密码      -->
+    <string name="forget_pwd_page_title">Forgot password</string>
+    <string name="forget_pwd_input_email">Registered mail</string>
+    <string name="forget_pwd_input_code">Verification code</string>
+    <string name="forget_pwd_input_new_pwd">The new password</string>
+    <string name="forget_pwd_input_new_pwd_again">Confirm new password</string>
+    <string name="forget_pwd_update">Confirm the change</string>
+    <string name="please_forget_pwd_input_new_pwd">Please enter a new password</string>
+    <string name="please_forget_pwd_pwd_error">Two password input</string>
+    <string name="please_forget_pwd_update_success">Modify the success</string>
+    <string name="please_forget_pwd_update_failed">Modify the failure</string>
+
+    <!--    修改密码      -->
+    <string name="update_password_title">Change the password</string>
+    <string name="update_password_old_pwd">Please enter the original password</string>
+    <string name="update_password_new_pwd">Please enter a new password</string>
+    <string name="update_password_new_pwd_affirm">Confirm new password</string>
+    <string name="update_password_new_pwd_noequals">Two password input</string>
+    <string name="update_pay_password_title">Modify payment password</string>
+    <string name="update_pay_password_tip_title">Modify the password to the original payment for the first time the password for the login password</string>
+
+    <!--    忘记支付密码      -->
+    <string name="forget_paypwd_page_title">Forget to pay the password</string>
+
+    <!--    常见问题      -->
+    <string name="issue_page_title">Contact customer service</string>
+    <string name="issue_name_txt">Rookie help</string>
+    <string name="issue_contact_phone_txt">customer service mailbox %1$s</string>
+
+    <!--    其它      -->
+    <string name="public_look_txt">View</string>
+    <string name="public_price_txt">Price:%1$sYUNT</string>
+    <string name="public_canbuy_number_txt">Today the rest of the planet:%1$s</string>
+    <string name="public_star_make_txt">Star to make an appointment</string>
+    <string name="activity_register_jiedian_title">Invite Planet registered</string>
+    <string name="data_is_null">Temporarily no data</string>
+    <string name="save_bitmap_success">qr code has been saved to the system album</string>
+    <string name="save_bitmap_failed">save the qr code failure</string>
+    <string name="set_yun_tips">wallet address please fill in your exchange ERC20 tokens, YUN address or your private ETH purse</string>
+    <string name="fragment_myteam_page_title">Invited by the planet</string>
+    <string name="fragment_game_page_title">Game</string>
+    <string name="null_txt">no</string>
+
+    <!--    个人信息设置      -->
+    <string name="userinfo_defult_nickname">Anonymous</string>
+    <string name="set_userinfo_page_title">Personal information set</string>
+    <string name="set_userinfo_icon">Head</string>
+    <string name="set_userinfo_input_nickname">Please enter a nickname</string>
+    <string name="set_userinfo_input_phone">Please enter the phone number</string>
+    <string name="set_userinfo_save">Save</string>
+    <string name="set_userinfo_camera_pz">Photo</string>
+    <string name="set_userinfo_camera_select">From the local choose</string>
+
+    <!--    拍照      -->
+    <string name="minnum">At least choose a picture</string>
+    <string name="maxnum">Max select%1$dpicture</string>
+    <string name="all_images">All pictures</string>
+    <string name="sd_disable">SD card, not with</string>
+    <string name="image">Images</string>
+    <string name="takephoto">Photo</string>
+    <string name="confirm_format">%1$s(%2$d/%3$d)</string>
+    <string name="confirm">Confirm</string>
+    <string name="open_camera_failure">Open camera failed</string>
+    <string name="permission_storage_denied">Please open storage space permissions</string>
+    <string name="permission_camera_denied">Please open the relevant permissions</string>
+
+    <!--    矿机收益      -->
+    <string name="account_miningIncome_str_txt">Mill benefits</string>
+    <string name="account_minerBonus_str_txt">Galaxy profits</string>
+    <string name="account_star_minerBonus_str_txt">Planet earnings</string>
+    <string name="account_miningBonus_str_txt">Total Planet returns</string>
+    <string name="account_miningBonus_tips_str_txt">(Invited nine star galaxy yield can be obtained)</string>
+    <string name="account_my_jiedian_str_txt">I recommend the planet</string>
+    <string name="account_invite_jiedian_str_txt">Invite Planet</string>
+    <string name="account_set_jiedian_str_txt">Settings</string>
+    <string name="account_set_logout_str_txt">Exit</string>
+
+    <!--    设置      -->
+    <string name="act_set_title_txt">Settings</string>
+    <string name="act_set_yun_title_txt">YUN mention money address set</string>
+    <string name="act_set_wallet_address_txt">Enter wallet address</string>
+    <string name="act_set_input_money_code_txt">Enter payment password</string>
+    <string name="act_set_update_password_title_txt">Login password change</string>
+    <string name="act_set_update_paypassword_title_txt">Payment password change</string>
+    <string name="act_set_update_wallet_address_title_txt">Wallet address Settings</string>
+    <string name="share_start_select_email_txt">Please select email application class</string>
+    <string name="share_start_email_txt">Start mail failure!</string>
+    <string name="set_success">Set success</string>
+    <string name="set_version_txt">The current version：%1$s</string>
+
+    <!--    购买星球      -->
+    <string name="purchase_star_name_txt">Star name：%1$s</string>
+    <string name="purchase_star_title_txt">Name：%1$s</string>
+    <string name="purchase_star_title_null_txt">Null</string>
+    <string name="purchase_star_affirm_txt">You confirm the cost%1$s%2$sbuy?</string>
+    <string name="purchase_star_price_txt">Price：%1$sYUNT</string>
+    <string name="purchase_star_suanli_txt">Calculate power：%1$sTP/s</string>
+    <string name="purchase_star_zhouqi_txt">Cycle：%1$s</string>
+    <string name="purchase_star_chanliang_txt">24hours production：%1$sYUNT</string>
+    <string name="purchase_star_tips_txt">Finish the game task is expected to increase 5%-20%calculate force，gains add 250-1000 YUNT/day</string>
+    <string name="purchase_star_puchase_bt">Buy</string>
+    <string name="purchase_star_puchase_in_bt">Is buying</string>
+    <string name="purchase_star_puchase_success_bt">Buy success</string>
+    <string name="purchase_star_defult_bt">Details</string>
+    <string name="purchase_star_suanli_bt">Calculate power：%1$sTP/S</string>
+    <string name="purchase_star_zhuangtai_bt">Status：%1$s</string>
+    <string name="purchase_star_shengyu_bt">Residual：%1$s</string>
+    <string name="purchase_star_ljwc_bt">Accumulated dug：%1$sYUNT</string>
+
+    <!--    邀请节点      -->
+    <string name="invite_node_page_title">Invite Planet</string>
+    <string name="invite_node_scan_tips">Flicking a register to download</string>
+    <string name="invite_node_invitation_code">Invite code：%1$s</string>
+    <string name="invite_node_onclick_copy_link">(Click on the copy)</string>
+    <string name="invite_node_copy_link">Copy link</string>
+    <string name="invite_node_copy_success">Copy success</string>
+    <string name="invite_node_bt">Invite Planet</string>
+    <string name="act_jiedian_earnings_page_title">Income details</string>
+    <string name="invite_node_tips_txt">Note: click invite Planet button can save pictures qr code, and then put the qr code image sharing invited Planet</string>
+
+    <!--    历史记录      -->
+    <string name="act_exchange_page_title">History</string>
+    <string name="act_exchange_yunt_title">Exchange YUNT</string>
+    <string name="act_exchange_yun_title">Exchange YUN</string>
+
+    <!--    版本更新检测      -->
+    <string name="update_title">Applying the update</string>
+    <string name="update_message">Have the latest version is detected</string>
+    <string name="update_ok">Update</string>
+    <string name="update_cancel">Cancel</string>
+
+    <string name="time_day">Day</string>
+    <string name="time_hour">Hour</string>
+    <string name="time_min">Minutes</string>
+    <string name="time_ss">Second</string>
+    <string name="kuangjie_no_run">Not mining</string>
+    <string name="kuangjie_run">In the mining</string>
+    <string name="kuangjie_run_stop">Stop mining</string>
+
+    <string name="yun_set_address">Set address</string>
+    <string name="yun_exchange_audit">Pending</string>
+    <string name="yun_exchange_begin">Wait a currency</string>
+    <string name="yun_exchange_in">Play money in</string>
+    <string name="yun_exchange_in_tips">Is in a currency</string>
+    <string name="yun_exchange_failed">Play currency failure</string>
+    <string name="yun_exchange_finish">Play money to complete</string>
+    <string name="exchange_yun_detail_page_title">Details for YUN</string>
+    <string name="exchange_yunt_detail_page_title">Change YUNT details</string>
+    <string name="exchange_detail_number">Number：%1$s</string>
+    <string name="exchange_detail_status">Status：%1$s</string>
+    <string name="exchange_detail_qkqr">Block confirmed：%1$s</string>
+    <string name="exchange_detail_address">Address：%1$s</string>
+    <string name="exchange_detail_txid">Txid：%1$s</string>
+    <string name="exchange_detail_date">Time：%1$s</string>
+    <string name="exchange_detail_copy_txid">Copy Txid</string>
+    <string name="exchange_detail_check_txid">Check Txid</string>
+
+    <!--    选择语言      -->
+    <string name="language_type_page_title">Select language</string>
+
+</resources>

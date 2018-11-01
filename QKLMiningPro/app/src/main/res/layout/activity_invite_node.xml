@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <com.qkl.online.mining.app.ui.view.HeaderView
+        android:id="@+id/activity_invite_node_headerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dip"
+            android:background="@drawable/shape_white_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="10dip">
+
+            <ImageView
+                android:layout_width="70dip"
+                android:layout_height="70dip"
+                android:layout_marginTop="10dip"
+                android:src="@drawable/login_logo" />
+
+            <ImageView
+                android:layout_marginTop="10dip"
+                android:layout_width="150dip"
+                android:layout_height="wrap_content"
+                android:src="@drawable/invite_logo_txt" />
+
+            <TextView
+                android:id="@+id/invite_node_appname_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:gravity="center"
+                android:textColor="@color/color_333333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/invite_node_appsummary_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dip"
+                android:layout_marginRight="50dip"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:textColor="@color/color_333333"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/share_qrcodeImg_image"
+                android:layout_width="150dip"
+                android:layout_height="150dip"
+                android:layout_marginTop="10dip"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:text="@string/invite_node_scan_tips"
+                android:textColor="@color/color_333333"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/invite_node_code_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/invite_node_code_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/invite_node_invitation_code"
+                    android:textColor="@color/color_000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:text="@string/invite_node_onclick_copy_link"
+                    android:textColor="@color/color_000000"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip">
+
+                <TextView
+                    android:id="@+id/invite_node_link_txt"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dip"
+                    android:layout_weight="1"
+                    android:background="@color/color_F6F6F6"
+                    android:paddingBottom="5dip"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="5dip"
+                    android:singleLine="true"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/invite_node_copy_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_get_msgcode_bg"
+                    android:paddingBottom="3dip"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="3dip"
+                    android:text="@string/invite_node_copy_link"
+                    android:textColor="@color/color_9441EF"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/invite_node_invite_bt"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="30dip"
+                android:background="@drawable/shape_game_renwu_bg"
+                android:gravity="center"
+                android:text="@string/invite_node_bt"
+                android:textColor="@color/color_ffffff"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="10dip"
+                android:text="@string/invite_node_tips_txt"
+                android:textColor="@color/color_FF6700"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

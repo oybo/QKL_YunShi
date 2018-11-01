@@ -1,0 +1,229 @@
+<resources>
+    <string name="app_name">雲石星球</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="progress_dialog_holdon">請稍候</string>
+
+    <!--    弹出框提示      -->
+    <string name="tips_tip_title_txt">提示</string>
+    <string name="main_cancel">取消</string>
+    <string name="main_confirm">確定</string>
+    <string name="game_is_exit_txt">是否退出遊戲？</string>
+
+    <!--    动态申请权限      -->
+    <string name="permissions_title">需授予以下許可權才可以正常使用</string>
+    <string name="permissions_message">·修改或删除您的SD卡中的內容\n·讀取您的SD卡中的內容</string>
+    <string name="permissions_get_txt">授予許可權</string>
+    <string name="permissions_exit_txt">退出應用</string>
+
+    <!--    首页      -->
+    <string name="main_tab_home">首頁</string>
+    <string name="main_tab_star">星球</string>
+    <string name="main_tab_game">遊戲</string>
+    <string name="main_tab_userinfo">個人信息</string>
+    <string name="main_star_mysytar_txt">我的星球</string>
+    <string name="main_star_mysytar_not_available_txt">你還沒購買星球</string>
+    <string name="main_shengyu_kj_txt">我的礦機：%1$s（剩餘%2$s）</string>
+    <string name="main_mywallet_txt">我的錢包</string>
+    <string name="main_ynu_txt">YUNT</string>
+    <string name="main_parities_ynu_txt">兌換YUN</string>
+    <string name="main_parities_ynut_txt">兌換YUNT</string>
+    <string name="parities_ynu_input_number_txt">請輸入YUNT數量，最少%1$s個</string>
+    <string name="parities_ynu_input_number_number_check_txt">YUNT數量不能少於%1$s個</string>
+    <string name="parities_ynu_need_yunt_txt">（預計兌換%1$s個YUN）</string>
+    <string name="parities_ynu_charge_txt">手續費</string>
+    <string name="parities_ynu_charge_value_txt">%1$sYUNT</string>
+    <string name="parities_ynu_atexchange_txt">當前匯率：%1$s</string>
+    <string name="parities_ynu_in_address_txt">轉入YUN地址：</string>
+    <string name="parities_ynu_str_in_address_txt">轉入YUN地址：%1$s</string>
+    <string name="parities_ynu_in_password_txt">請輸入支付密碼</string>
+    <string name="parities_ynu_in_tips_txt">提示：最小兌換價值500YUNT</string>
+    <string name="parities_ynu_success_txt">兌換成功</string>
+    <string name="parities_ynu_affirm_txt">確認兌換</string>
+    <string name="parities_ynu_record_txt">兌換記錄</string>
+    <string name="parities_ynut_input_number_txt">請輸入YNU數量</string>
+    <string name="parities_ynut_need_yunt_txt">（預計兌換%1$s個YUNT）</string>
+    <string name="parities_ynut_in_tips_txt">（注意：請將相應的YUN轉入以上地址，待YUN轉入該地址確認後會自動充入YUNT到帳戶）</string>
+    <string name="home_kc_dump_energy_txt">礦池YUN儲量</string>
+    <string name="home_kc_transaction_record_txt">礦池交易記錄</string>
+    <string name="home_kc_suanli_txt">礦池總算力（TP/S）</string>
+    <string name="home_kc_ynm_move_towards_txt">YUN價格走向</string>
+    <string name="yun_usdt_exchange_txt">YUN/USDT:%1$s$</string>
+    <string name="yunt_my_money_txt">我的YUNT:%1$s</string>
+
+    <!--    注册      -->
+    <string name="register_page_title">註冊</string>
+    <string name="register_page_welcome">歡迎來到雲石星球</string>
+    <string name="register_input_email">請輸入郵箱</string>
+    <string name="register_get_code">獲取驗證碼</string>
+    <string name="register_input_code">請輸入驗證碼</string>
+    <string name="register_input_password">請輸入登入密碼</string>
+    <string name="register_input_tribute">請輸入邀請碼</string>
+    <string name="register_email_unable_null">郵箱不能為空</string>
+    <string name="register_code_unable_null">驗證碼不能為空</string>
+    <string name="register_password_unable_null">登入密碼不能為空</string>
+    <string name="register_send_msg_success">郵件驗證碼發送成功</string>
+    <string name="register_send_msg_failed">獲取驗證碼失敗</string>
+    <string name="register_success">註冊成功</string>
+    <string name="register_failed">註冊失敗</string>
+    <string name="main_exit_app_tips_tx">再按壹次退出</string>
+
+    <!--    登录      -->
+    <string name="login_page_title">雲石星球登入</string>
+    <string name="login_input_loginname">請輸入郵箱</string>
+    <string name="login_input_password">請輸入登入密碼</string>
+    <string name="login_login">登錄</string>
+    <string name="login_forget_password">忘記密碼</string>
+    <string name="login_success">登錄成功</string>
+    <string name="login_failed">登錄失敗</string>
+    <string name="login_loading_in">正在登錄</string>
+
+    <!--    忘记密码      -->
+    <string name="forget_pwd_page_title">忘記密碼</string>
+    <string name="forget_pwd_input_email">注册郵箱</string>
+    <string name="forget_pwd_input_code">驗證碼</string>
+    <string name="forget_pwd_input_new_pwd">新密碼</string>
+    <string name="forget_pwd_input_new_pwd_again">確認新密碼</string>
+    <string name="forget_pwd_update">確認修改</string>
+    <string name="please_forget_pwd_input_new_pwd">請輸入新的密碼</string>
+    <string name="please_forget_pwd_pwd_error">兩次密碼輸入不壹致</string>
+    <string name="please_forget_pwd_update_success">修改成功</string>
+    <string name="please_forget_pwd_update_failed">修改失敗</string>
+
+    <!--    修改密码      -->
+    <string name="update_password_title">修改密碼</string>
+    <string name="update_password_old_pwd">請輸入原密碼</string>
+    <string name="update_password_new_pwd">請輸入新密碼</string>
+    <string name="update_password_new_pwd_affirm">確認新密碼</string>
+    <string name="update_password_new_pwd_noequals">兩次密碼輸入不壹致</string>
+    <string name="update_pay_password_title">修改支付密碼</string>
+
+    <!--    忘记支付密码      -->
+    <string name="forget_paypwd_page_title">忘記支付密碼</string>
+
+    <!--    常见问题      -->
+    <string name="issue_page_title">聯系客服</string>
+    <string name="issue_name_txt">常見問題</string>
+    <string name="issue_contact_phone_txt">客服郵箱 %1$s</string>
+
+    <!--    其它      -->
+    <string name="public_look_txt">查看</string>
+    <string name="public_price_txt">價格：%1$sYUNT</string>
+    <string name="public_canbuy_number_txt">今日剩余星球數：%1$s</string>
+    <string name="activity_register_jiedian_title">邀請星球注册</string>
+    <string name="data_is_null">暫無數據</string>
+    <string name="save_bitmap_success">二維碼已保存到系統相册</string>
+    <string name="save_bitmap_failed">保存二維碼失敗</string>
+    <string name="set_yun_tips">錢包地址請填寫您交易所的ERC20代幣YUN地址或者您的私人ETH錢包地址</string>
+    <string name="fragment_myteam_page_title">我的團隊</string>
+    <string name="fragment_game_page_title">遊戲</string>
+    <string name="null_txt">無</string>
+
+    <!--    个人信息设置      -->
+    <string name="userinfo_defult_nickname">匿名</string>
+    <string name="set_userinfo_page_title">個人信息設置</string>
+    <string name="set_userinfo_icon">頭像</string>
+    <string name="set_userinfo_input_nickname">請輸入昵稱</string>
+    <string name="set_userinfo_input_phone">請輸入手機號</string>
+    <string name="set_userinfo_save">保存</string>
+    <string name="set_userinfo_camera_pz">拍照</string>
+    <string name="set_userinfo_camera_select">從本地選擇</string>
+
+    <!--    拍照      -->
+    <string name="minnum">最少選擇壹張圖片</string>
+    <string name="maxnum">最多選擇%1$d張圖片</string>
+    <string name="all_images">所有圖片</string>
+    <string name="sd_disable"> SD卡不可用</string>
+    <string name="image">圖片</string>
+    <string name="takephoto">拍照</string>
+    <string name="confirm_format">%1$s（%2$d/%3$d）</string>
+    <string name="confirm">確定</string>
+    <string name="open_camera_failure">打開相機失敗</string>
+    <string name="permission_storage_denied">請打開存儲空間許可權</string>
+    <string name="permission_camera_denied">請打開相關許可權</string>
+
+    <!--    矿机收益      -->
+    <string name="account_miningIncome_str_txt">礦機收益</string>
+    <string name="account_minerBonus_str_txt">星球收益</string>
+    <string name="account_miningBonus_str_txt">總星球收益</string>
+    <string name="account_miningBonus_tips_str_txt">（邀請9個星球可獲得星球收益）</string>
+    <string name="account_my_jiedian_str_txt">我的星球</string>
+    <string name="account_invite_jiedian_str_txt">邀請星球</string>
+    <string name="account_set_jiedian_str_txt">設定</string>
+    <string name="account_set_logout_str_txt">退出</string>
+
+    <!--    设置      -->
+    <string name="act_set_title_txt">設定</string>
+    <string name="act_set_yun_title_txt">YUN提幣地址設定</string>
+    <string name="act_set_wallet_address_txt">輸入錢包地址</string>
+    <string name="act_set_input_money_code_txt">輸入支付密碼</string>
+    <string name="act_set_update_password_title_txt">登入密碼修改</string>
+    <string name="act_set_update_paypassword_title_txt">支付密碼修改</string>
+    <string name="act_set_update_wallet_address_title_txt">錢包地址設定</string>
+    <string name="share_start_select_email_txt">請選擇郵件類應用</string>
+    <string name="share_start_email_txt">啟動郵箱失敗！</string>
+    <string name="set_success">設定成功</string>
+    <string name="set_version_txt">當前版本：%1$s</string>
+
+    <!--    购买星球      -->
+    <string name="purchase_star_name_txt">星球名稱：%1$s</string>
+    <string name="purchase_star_title_txt">名稱：%1$s</string>
+    <string name="purchase_star_price_txt">價格：%1$sYUNT</string>
+    <string name="purchase_star_suanli_txt">算力：%1$sTP/s</string>
+    <string name="purchase_star_zhouqi_txt">週期：%1$s</string>
+    <string name="purchase_star_chanliang_txt">24小時產量：%1$sYUNT</string>
+    <string name="purchase_star_tips_txt">完成遊戲任務預計新增5%-20%算力，收益新增250-1000YUNT/天</string>
+    <string name="purchase_star_puchase_bt">購買</string>
+    <string name="purchase_star_puchase_in_bt">正在購買</string>
+    <string name="purchase_star_puchase_success_bt">購買成功</string>
+    <string name="purchase_star_defult_bt">詳情</string>
+    <string name="purchase_star_suanli_bt">算力：%1$sGH/s</string>
+    <string name="purchase_star_zhuangtai_bt">狀態：%1$s</string>
+    <string name="purchase_star_shengyu_bt">剩餘：%1$s</string>
+    <string name="purchase_star_ljwc_bt">累計挖出：%1$sYUNT</string>
+
+    <!--    邀请节点      -->
+    <string name="invite_node_page_title">邀請星球</string>
+    <string name="invite_node_scan_tips">掃壹掃註冊下載</string>
+    <string name="invite_node_invitation_code">邀請碼：%1$s</string>
+    <string name="invite_node_copy_link">複製連結</string>
+    <string name="invite_node_copy_success">複製成功</string>
+    <string name="invite_node_bt">邀請星球</string>
+    <string name="act_jiedian_earnings_page_title">收益詳情</string>
+    <string name="invite_node_tips_txt">說明：點擊邀請星球按鈕可以保存圖片二維碼，然後把二維碼圖片分享邀請星球</string>
+
+    <!--    历史记录      -->
+    <string name="act_exchange_page_title">歷史記錄</string>
+    <string name="act_exchange_yunt_title">兌換YUNT</string>
+    <string name="act_exchange_yun_title">兌換YUN</string>
+
+    <string name="time_day">天</string>
+    <string name="time_hour">小時</string>
+    <string name="time_min">分鐘</string>
+    <string name="time_ss">秒</string>
+    <string name="kuangjie_no_run">未運行</string>
+    <string name="kuangjie_run">挖礦中</string>
+    <string name="kuangjie_run_stop">停止挖礦</string>
+
+    <string name="yun_set_address">設定地址</string>
+    <string name="yun_exchange_audit">等待稽核</string>
+    <string name="yun_exchange_begin">等待打幣</string>
+    <string name="yun_exchange_in">打幣中</string>
+    <string name="yun_exchange_in_tips">正在打幣中</string>
+    <string name="yun_exchange_failed">打幣失敗</string>
+    <string name="yun_exchange_finish">打幣完成</string>
+    <string name="exchange_yun_detail_page_title">兌換YUN詳情</string>
+    <string name="exchange_yunt_detail_page_title">兌換YUNT詳情</string>
+    <string name="exchange_detail_number">數量：%1$s</string>
+    <string name="exchange_detail_status">狀態：%1$s</string>
+    <string name="exchange_detail_qkqr">區塊確認：%1$s</string>
+    <string name="exchange_detail_address">地址：%1$s</string>
+    <string name="exchange_detail_txid">Txid:%1$s</string>
+    <string name="exchange_detail_date">時間：%1$s</string>
+    <string name="exchange_detail_copy_txid">複製Txid</string>
+    <string name="exchange_detail_check_txid">檢查Txid</string>
+
+    <!--    选择语言      -->
+    <string name="language_type_page_title">選擇語言</string>
+
+</resources>

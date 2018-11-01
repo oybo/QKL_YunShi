@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <com.qkl.online.mining.app.ui.view.HeaderView
+        android:id="@+id/activity_set_userinfo_headerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/set_userinfo_camera_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:layout_margin="10dip"
+        android:background="@drawable/shape_game_item_bg"
+        android:padding="20dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/set_userinfo_icon"
+            android:textColor="@color/color_ffffff"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/userinfo_more_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/sc_more" />
+
+        <com.qkl.online.mining.app.ui.view.CircleImageView
+            android:id="@+id/set_userinfo_icon"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:layout_toLeftOf="@id/userinfo_more_view" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/set_userinfo_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="20dip"
+        android:background="@android:color/transparent"
+        android:hint="@string/set_userinfo_input_nickname"
+        android:singleLine="true"
+        android:textColor="@color/color_ffffff"
+        android:textColorHint="@color/color_ffffff"
+        android:textSize="13sp" />
+
+    <View
+        style="@style/view_line"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip" />
+
+    <EditText
+        android:id="@+id/set_userinfo_phone"
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="20dip"
+        android:background="@android:color/transparent"
+        android:hint="@string/set_userinfo_input_phone"
+        android:inputType="number"
+        android:singleLine="true"
+        android:textColor="@color/color_ffffff"
+        android:textColorHint="@color/color_ffffff"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <View
+        style="@style/view_line"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/set_userinfo_save"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="50dip"
+        android:background="@drawable/shape_game_renwu_bg"
+        android:gravity="center"
+        android:text="@string/set_userinfo_save"
+        android:textColor="@color/color_ffffff"
+        android:textSize="14sp" />
+
+</LinearLayout>

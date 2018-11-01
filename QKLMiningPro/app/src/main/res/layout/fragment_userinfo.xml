@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg_color">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_userinfo_bg" />
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/fragment_userinfo_refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/fragment_userinfo_titleview"
+                    android:layout_width="1dip"
+                    android:layout_height="0dip" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dip"
+                    android:singleLine="true"
+                    android:text="@string/main_tab_userinfo"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/shape_white_bg"
+                    android:padding="10dip">
+
+                    <com.qkl.online.mining.app.ui.view.CircleImageView
+                        android:id="@+id/fragment_userinfo_headview"
+                        android:layout_width="55dip"
+                        android:layout_height="55dip"
+                        android:layout_marginRight="10dip"
+                        android:src="@drawable/my_icon_wodejiedian" />
+
+                    <TextView
+                        android:id="@+id/fragment_userinfo_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/fragment_userinfo_headview"
+                        android:singleLine="true"
+                        android:textColor="@color/color_000000"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/fragment_userinfo_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/fragment_userinfo_name"
+                        android:layout_marginTop="3dip"
+                        android:layout_toRightOf="@id/fragment_userinfo_headview"
+                        android:singleLine="true"
+                        android:textColor="@color/color_000000"
+                        android:textSize="12.5sp" />
+
+                    <TextView
+                        android:id="@+id/fragment_userinfo_mykj"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/fragment_userinfo_email"
+                        android:layout_marginTop="3dip"
+                        android:layout_toRightOf="@id/fragment_userinfo_headview"
+                        android:singleLine="true"
+                        android:textColor="@color/color_000000"
+                        android:textSize="12.5sp" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/shape_white_bg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dip"
+                    android:paddingLeft="20dip"
+                    android:paddingRight="20dip"
+                    android:paddingTop="10dip">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dip"
+                        android:text="@string/main_mywallet_txt"
+                        android:textColor="@color/color_000000"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        style="@style/view_line"
+                        android:layout_marginBottom="10dip"
+                        android:layout_marginTop="15dip" />
+
+                    <TextView
+                        android:id="@+id/userinfo_star_earnings_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/account_minerBonus_str_txt"
+                        android:textColor="@color/color_333333"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/fragment_userinfo_ynut_balance_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dip"
+                        android:text="0"
+                        android:textColor="@color/color_9441EF"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dip"
+                        android:text="@string/main_ynu_txt"
+                        android:textColor="@color/color_000000"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/userinfo_yunechangerate_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="25dip"
+                        android:text="@string/parities_ynu_atexchange_txt"
+                        android:textColor="@color/color_000000"
+                        android:textSize="13sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dip"
+                        android:layout_marginLeft="20dip"
+                        android:layout_marginRight="20dip"
+                        android:layout_marginTop="10dip">
+
+                        <TextView
+                            android:id="@+id/fragment_userinfo_yun_parities"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector_exchange_bg"
+                            android:gravity="center"
+                            android:paddingBottom="5dip"
+                            android:paddingTop="5dip"
+                            android:text="@string/main_parities_ynu_txt"
+                            android:textColor="@drawable/selector_exchange_txt"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="25dip"
+                            android:layout_height="20dip"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dip"
+                            android:layout_marginRight="15dip"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/my_icon_jiantou" />
+
+                        <TextView
+                            android:id="@+id/fragment_userinfo_yunt_parities"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="right"
+                            android:background="@drawable/selector_exchange_bg"
+                            android:gravity="center"
+                            android:paddingBottom="5dip"
+                            android:paddingTop="5dip"
+                            android:text="@string/main_parities_ynut_txt"
+                            android:textColor="@drawable/selector_exchange_txt"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_F6F6F6">
+
+                        <LinearLayout
+                            android:id="@+id/fragment_userinfo_yun_parities_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/duihuan_yun_number_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dip"
+                                android:background="@drawable/shape_white_bg"
+                                android:hint="@string/parities_ynu_input_number_txt"
+                                android:inputType="number"
+                                android:paddingBottom="8dip"
+                                android:paddingLeft="10dip"
+                                android:paddingRight="10dip"
+                                android:paddingTop="8dip"
+                                android:singleLine="true"
+                                android:textColor="@color/color_000000"
+                                android:textColorHint="@color/color_999999"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/duihuan_yun_need_number_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dip"
+                                android:text="@string/parities_ynu_need_yunt_txt"
+                                android:textColor="@color/color_999999"
+                                android:textSize="12sp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dip"
+                                android:layout_marginTop="5dip">
+
+                                <TextView
+                                    android:id="@+id/duihuan_yun_charge_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="@string/parities_ynu_charge_txt"
+                                    android:textColor="@color/color_000000"
+                                    android:textSize="12sp" />
+
+                                <com.qkl.online.mining.app.ui.view.SeekBarFloat
+                                    android:id="@+id/duihuan_yun_charge_seekbar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/duihuan_yun_charge_title"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginRight="10dip"
+                                    android:layout_marginTop="3dip"
+                                    android:thumb="@drawable/seek_style" />
+
+                                <TextView
+                                    android:id="@+id/duihuan_yun_charge_txt"
+                                    android:layout_width="65dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/duihuan_yun_charge_seekbar"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="3dip"
+                                    android:gravity="center"
+                                    android:text="@string/parities_ynu_charge_value_txt"
+                                    android:textColor="@color/color_333333"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/duihuan_yun_sh_txt"
+                                    android:layout_width="65dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="10dip"
+                                    android:layout_marginTop="3dip"
+                                    android:gravity="center"
+                                    android:textColor="@color/color_666666"
+                                    android:textSize="12sp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dip"
+                                android:layout_marginTop="5dip"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/parities_ynu_in_address_txt"
+                                    android:textColor="@color/color_333333"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/duihuan_yun_set_adress_bt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingLeft="10dip"
+                                    android:paddingRight="10dip"
+                                    android:text="@string/yun_set_address"
+                                    android:textColor="@color/color_333333"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/duihuan_yun_adress_in_txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/duihuan_yun_set_adress_bt"
+                                    android:layout_marginTop="5dip"
+                                    android:textColor="@color/color_000000"
+                                    android:textSize="14sp" />
+
+                            </RelativeLayout>
+
+                            <EditText
+                                android:id="@+id/duihuan_yun_password_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dip"
+                                android:background="@drawable/shape_white_bg"
+                                android:hint="@string/parities_ynu_in_password_txt"
+                                android:inputType="textPassword"
+                                android:paddingBottom="8dip"
+                                android:paddingLeft="10dip"
+                                android:paddingRight="10dip"
+                                android:paddingTop="8dip"
+                                android:singleLine="true"
+                                android:textColor="@color/color_000000"
+                                android:textColorHint="@color/color_999999"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/userinfo_parities_min_ynu_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dip"
+                                android:singleLine="true"
+                                android:text="@string/parities_ynu_in_tips_txt"
+                                android:textColor="@color/color_666666"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/parities_ynu_affirm_bt"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dip"
+                                android:layout_margin="10dip"
+                                android:background="@drawable/shape_game_renwu_bg"
+                                android:gravity="center"
+                                android:text="@string/parities_ynu_affirm_txt"
+                                android:textColor="@color/color_ffffff"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/parities_ynu_record_bt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dip"
+                                android:layout_gravity="center"
+                                android:paddingLeft="30dip"
+                                android:paddingRight="30dip"
+                                android:paddingTop="5dip"
+                                android:singleLine="true"
+                                android:text="@string/parities_ynu_record_txt"
+                                android:textColor="@color/color_9441EF"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/fragment_userinfo_yunt_parities_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dip"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/duihuan_yunt_adress_in_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dip"
+                                android:layout_marginTop="6dip"
+                                android:text="@string/parities_ynu_str_in_address_txt"
+                                android:textColor="@color/color_000000"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="6dip"
+                                android:layout_marginTop="6dip"
+                                android:paddingLeft="10dip"
+                                android:text="@string/parities_ynut_in_tips_txt"
+                                android:textColor="@color/color_666666"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/parities_ynut_record_bt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dip"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:paddingLeft="30dip"
+                                android:paddingRight="30dip"
+                                android:singleLine="true"
+                                android:text="@string/parities_ynu_record_txt"
+                                android:textColor="@color/color_9441EF"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fragment_userinfo_kjsy_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/shape_game_item_bg"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/my_icon_shouyi" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dip"
+                        android:text="@string/account_miningIncome_str_txt"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/account_miningIncome_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawablePadding="5dip"
+                        android:drawableRight="@drawable/sc_more"
+                        android:gravity="center"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fragment_userinfo_jiedian_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/shape_game_item_bg"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/my_icon_jiedian" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dip"
+                        android:text="@string/account_minerBonus_str_txt"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/account_minerBonus_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawablePadding="5dip"
+                        android:drawableRight="@drawable/sc_more"
+                        android:gravity="center"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fragment_userinfo_zongjiedian_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/shape_game_item_bg"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/my_icon_zongjiedian" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dip"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/account_miningBonus_str_txt"
+                            android:textColor="@color/color_ffffff"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dip"
+                            android:text="@string/account_miningBonus_tips_str_txt"
+                            android:textColor="@color/color_ffffff"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/account_miningBonus_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawablePadding="5dip"
+                        android:drawableRight="@drawable/sc_more"
+                        android:gravity="center"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fragment_star_number_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/shape_game_item_bg"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip">
+
+                    <ImageView
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/my_icon_zongjiedian" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dip"
+                        android:text="@string/account_star_minerBonus_str_txt"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/account_star_number_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawablePadding="5dip"
+                        android:drawableRight="@drawable/sc_more"
+                        android:gravity="center"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fragment_myteam_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/shape_game_item_bg"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip">
+
+                    <ImageView
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/my_icon_wodejiedian" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dip"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/account_my_jiedian_str_txt"
+                            android:textColor="@color/color_ffffff"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dip"
+                            android:text="@string/account_miningBonus_tips_str_txt"
+                            android:textColor="@color/color_ffffff"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/account_my_jiedian_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawablePadding="5dip"
+                        android:drawableRight="@drawable/sc_more"
+                        android:gravity="center"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fragment_userinfo_invite_jiedian_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/shape_game_item_bg"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip">
+
+                    <ImageView
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/my_icon_yaoqing" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dip"
+                        android:text="@string/account_invite_jiedian_str_txt"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/sc_more" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fragment_userinfo_set_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginBottom="20dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/shape_game_item_bg"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip">
+
+                    <ImageView
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/my_icon_shezhi" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dip"
+                        android:text="@string/account_set_jiedian_str_txt"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/sc_more" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/fragment_userinfo_logout_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_margin="10dip"
+                    android:background="@drawable/shape_game_renwu_bg"
+                    android:gravity="center"
+                    android:text="@string/account_set_logout_str_txt"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

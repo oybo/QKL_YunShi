@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qkl.online.mining.app">
+
+    <!-- Required -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".application.AppContext"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 全面屏的适配  -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+
+        <!-- 华为的刘海屏适配  -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+
+        <!-- 小米刘海屏的适配  -->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+
+        <!--  欢迎页面    -->
+        <activity
+            android:name="com.qkl.online.mining.app.ui.activity.WelComeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|fontScale|uiMode"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WelCome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--  主页面    -->
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <!--  注册节点    -->
+
+        <!--  登录页面    -->
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  设置语言页面    -->
+        <activity
+            android:name=".ui.activity.SetLanguageActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  设置个人信息页面    -->
+        <activity
+            android:name=".ui.activity.SetUserInfoActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  注册用户页面    -->
+        <activity
+            android:name=".ui.activity.RegisterUserActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  修改密码页面    -->
+        <activity
+            android:name=".ui.activity.UpdatePasswordActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  忘记密码页面    -->
+        <activity
+            android:name=".ui.activity.ForgetPasswordActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  修改支付密码页面    -->
+        <activity
+            android:name=".ui.activity.UpdatePayPasswordActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  忘记支付密码页面    -->
+        <activity
+            android:name=".ui.activity.ForgetPayPasswordActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  设置页面    -->
+        <activity
+            android:name=".ui.activity.SetActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  设置YUN地址页面    -->
+        <activity
+            android:name=".ui.activity.SetYunActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  浏览器页面    -->
+        <activity
+            android:name=".ui.activity.WebViewActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.GameWebViewActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  客服页面    -->
+        <activity
+            android:name=".ui.activity.KefuActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  邀请节点页面    -->
+        <activity
+            android:name=".ui.activity.InviteNodeActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  节点收益详情页面    -->
+        <activity
+            android:name=".ui.activity.JieDianEarningsActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  兑换页面    -->
+        <activity
+            android:name=".ui.activity.ExchangeListActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  兑换详情页面    -->
+        <activity
+            android:name=".ui.activity.ExchangeDetailActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  我的团队页面    -->
+        <activity
+            android:name=".ui.activity.MyTeamActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  新闻详情页面    -->
+        <activity
+            android:name=".ui.activity.NewsDetailActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  购买星球页面    -->
+        <activity
+            android:name=".ui.activity.PurchaseStarActivity"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize|fontScale|uiMode"
+            android:screenOrientation="portrait" />
+
+        <!--  访问共享文件-拍照选图    -->
+        <activity
+            android:name="com.yuyh.library.imgsel.ui.ISListActivity"
+            android:theme="@style/SelTheme" />
+
+        <activity
+            android:name="com.yuyh.library.imgsel.ui.ISCameraActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <meta-data
+            android:name="APP_ID"
+            android:value="${applicationId}" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.image_provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

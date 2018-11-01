@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <com.qkl.online.mining.app.ui.view.HeaderView
+        android:id="@+id/activity_set_yun_headerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dip"
+        android:background="@drawable/kefu_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="@string/issue_name_txt"
+        android:textColor="@color/color_ffffff"
+        android:textSize="20sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/kefu_issue_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_white_bg" />
+
+    <TextView
+        android:id="@+id/kefu_issue_phone"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/shape_white_bg"
+        android:drawableLeft="@drawable/kefu_icon_zhanghao"
+        android:drawablePadding="5dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dip"
+        android:text="@string/issue_contact_phone_txt"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp" />
+
+
+</LinearLayout>

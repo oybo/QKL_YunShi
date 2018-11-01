@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg_color">
+
+    <com.qkl.online.mining.app.ui.view.HeaderView
+        android:id="@+id/activity_exchange_detail_headerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/activity_exchange_detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_below="@id/activity_exchange_detail_headerview"
+        android:layout_margin="3dip"
+        android:background="@drawable/shape_white_bg"
+        android:gravity="center"
+        android:textColor="@color/color_9441EF"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_exchange_detail_title"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/shape_white_bg"
+        android:orientation="vertical"
+        android:padding="10dip">
+
+        <TextView
+            android:id="@+id/activity_exchange_detail_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dip"
+            android:paddingTop="10dip"
+            android:text="@string/exchange_detail_number"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp" />
+
+        <View style="@style/view_line_gray" />
+
+        <TextView
+            android:id="@+id/activity_exchange_detail_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dip"
+            android:paddingTop="10dip"
+            android:text="@string/exchange_detail_status"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp" />
+
+        <View style="@style/view_line_gray" />
+
+        <TextView
+            android:id="@+id/activity_exchange_detail_qukuai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dip"
+            android:paddingTop="10dip"
+            android:text="@string/exchange_detail_qkqr"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp" />
+
+        <View style="@style/view_line_gray" />
+
+        <TextView
+            android:id="@+id/activity_exchange_detail_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dip"
+            android:paddingTop="10dip"
+            android:text="@string/exchange_detail_address"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp" />
+
+        <View style="@style/view_line_gray" />
+
+        <TextView
+            android:id="@+id/activity_exchange_detail_txid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dip"
+            android:paddingTop="10dip"
+            android:text="@string/exchange_detail_txid"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp" />
+
+        <View style="@style/view_line_gray" />
+
+        <TextView
+            android:id="@+id/activity_exchange_detail_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dip"
+            android:paddingTop="10dip"
+            android:text="@string/exchange_detail_date"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dip"
+            android:layout_marginTop="80dip"
+            android:orientation="horizontal"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip">
+
+            <TextView
+                android:id="@+id/activity_exchange_detail_copy_txid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_get_msgcode_bg"
+                android:paddingBottom="6dip"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:paddingTop="6dip"
+                android:text="@string/exchange_detail_copy_txid"
+                android:textColor="@color/color_000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/activity_exchange_detail_check_txid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shape_get_msgcode_bg"
+                android:paddingBottom="6dip"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:paddingTop="6dip"
+                android:text="@string/exchange_detail_check_txid"
+                android:textColor="@color/color_000000"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/include_loading_layout"
+        layout="@layout/dialog_loading_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center" />
+
+</RelativeLayout>

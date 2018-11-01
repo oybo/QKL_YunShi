@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#2E1F4C</color>
+    <color name="colorPrimaryDark">#2E1F4C</color>
+    <color name="colorAccent">#3F51B5</color>
+
+    <!--  主界面tab字体颜色   -->
+    <color name="main_tab_txt_color">#3F51B5</color>
+    <!--  主界面背景颜色   -->
+    <color name="main_bg_color">#2E1F4C</color>
+
+    <!--  列表分割线颜色   -->
+    <color name="app_division_line_color">#492869</color>
+    <color name="division_line_color">#DEDEDE</color>
+    <color name="bottom_bg">#aaaaaa</color>
+
+    <!--  文字标题主颜色   -->
+    <color name="color_ffffff">#FFFFFF</color>
+
+    <color name="color_000000">#000000</color>
+    <color name="color_F6F6F6">#F6F6F6</color>
+    <color name="color_50000000">#50000000</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_FF6700">#FF6700</color>
+    <color name="color_FFFF31">#FFFF31</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_31224E">#31224E</color>
+    <color name="color_2D2648">#2D2648</color>
+    <color name="color_282045">#282045</color>
+    <color name="color_9441EF">#9441EF</color>
+    <color name="color_372853">#372853</color>
+    <color name="color_332C3D">#90332C3D</color>
+
+</resources>

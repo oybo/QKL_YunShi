@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary_night">#666666</color>
+    <color name="colorPrimaryDark_night">#666666</color>
+    <color name="colorAccent_night">#666666</color>
+
+    <!--  主界面背景颜色   -->
+    <color name="main_bg_color_night">#F8F8F8</color>
+
+    <!--  列表分割线颜色   -->
+    <color name="app_division_line_color_night">#DEDEDE</color>
+
+    <!--  文字标题主颜色   -->
+    <color name="app_title_txt_color_night">#333333</color>
+
+    <!--  文字标题主颜色   -->
+    <color name="color_txt_ffffff_night">#FFFFFF</color>
+
+
+</resources>

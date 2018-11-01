@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <com.qkl.online.mining.app.ui.view.HeaderView
+        android:id="@+id/activity_set_yun_headerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/set_wallet_address_et"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="50dip"
+        android:background="@null"
+        android:hint="@string/act_set_wallet_address_txt"
+        android:inputType="textVisiblePassword"
+        android:singleLine="true"
+        android:textColor="@color/color_ffffff"
+        android:textColorHint="@color/color_666666"
+        android:textCursorDrawable="@drawable/edit_cursor_color"
+        android:textSize="14sp" />
+
+    <View
+        style="@style/view_line"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip" />
+
+    <EditText
+        android:id="@+id/set_input_code_et"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="10dip"
+        android:background="@null"
+        android:hint="@string/act_set_input_money_code_txt"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textColor="@color/color_ffffff"
+        android:textColorHint="@color/color_666666"
+        android:textCursorDrawable="@drawable/edit_cursor_color"
+        android:textSize="14sp" />
+
+    <View
+        style="@style/view_line"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="13sp"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="10dip"
+        android:text="@string/set_yun_tips"
+        android:textColor="@color/color_FF6700"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/set_save_update"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="50dip"
+        android:background="@drawable/shape_game_renwu_bg"
+        android:gravity="center"
+        android:text="@string/forget_pwd_update"
+        android:textColor="@color/color_ffffff"
+        android:textSize="14sp" />
+
+</LinearLayout>

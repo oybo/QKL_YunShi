@@ -1,0 +1,151 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+def javaVersion = JavaVersion.VERSION_1_7
+
+android {
+
+    compileSdkVersion 28
+    buildToolsVersion '26.0.1'
+
+    compileOptions {
+        sourceCompatibility javaVersion
+        targetCompatibility javaVersion
+    }
+
+    defaultConfig {
+        applicationId "com.qkl.online.mining.app"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 5
+        versionName "1.0.5"
+
+        resConfigs "zh", "en", "zh-rHK", "zh-rMO", "zh-rTW"
+    }
+
+    //签名
+    signingConfigs {
+        debug {
+            storeFile file('./keystore/yunshi.jks')
+            keyAlias 'yunshi'
+            keyPassword '1234567890'
+            storePassword '1234567890'
+
+            v2SigningEnabled true
+        }
+        release {
+            storeFile file('./keystore/yunshi.jks')
+            keyAlias 'yunshi'
+            keyPassword '1234567890'
+            storePassword '1234567890'
+
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        debug {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            //签名
+            signingConfig  signingConfigs.debug
+        }
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+            //签名
+            signingConfig  signingConfigs.release
+
+            //将release版本的包名重命名，加上版本及日期
+            android.applicationVariants.all {
+                variant -> variant.outputs.each {
+                    output -> output.outputFile = new File(output.outputFile.parent, "release_" + defaultConfig.versionCode +  "_v" + defaultConfig.versionName + ".apk");
+                }
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['libs']
+        }
+        main {
+            res.srcDirs = ['src/main/res', 'src/main/res-night']
+        }
+    }
+
+    // 移除lint检查的error
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    dexOptions{
+        jumboMode true
+    }
+}
+
+//设置编码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+def supportVersion = "26.1.0"
+
+dependencies {
+    compile fileTree(include: ['*.jar'], exclude: '*.bak', dir: 'libs')
+
+    compile 'com.android.support:appcompat-v7:' + supportVersion
+    compile 'com.android.support:support-v4:' + supportVersion
+    compile 'com.android.support:design:' + supportVersion
+    compile 'com.android.support:cardview-v7:' + supportVersion
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    // findviewbyid
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // okgo
+    compile 'com.lzy.net:okgo:3.0.4'
+    // 简单安全的SP
+    compile "com.orhanobut:hawk:2.0.1"
+    // adapter
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.31'
+    // gson
+    compile 'com.google.code.gson:gson:2.8.0'
+    // glide
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+    // banner
+    compile 'com.youth.banner:banner:1.4.10'
+    // adapter
+    compile 'com.yuyh.easyadapter:library:1.1.0'
+    // eventbus
+    compile 'org.greenrobot:eventbus:3.0.0'
+    // bugly
+    compile 'com.tencent.bugly:crashreport:latest.release'
+
+    // skin-support basic widget
+    compile 'skin.support:skin-support:3.1.0-beta1'                   // skin-support 基础控件支持
+    compile 'skin.support:skin-support-design:3.1.0-beta1'            // skin-support-design material design 控件支持[可选]
+    compile 'skin.support:skin-support-cardview:3.1.0-beta1'          // skin-support-cardview CardView 控件支持[可选]
+    compile 'skin.support:skin-support-constraint-layout:3.1.0-beta1' // skin-support-constraint-layout ConstraintLayout 控件支持[可选]
+}
