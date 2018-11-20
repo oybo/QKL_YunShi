@@ -11,6 +11,7 @@ import com.qkl.online.mining.app.application.AppContext;
 import com.qkl.online.mining.app.data.commons.UrlConfig;
 import com.qkl.online.mining.app.data.json.JsonCallback;
 import com.qkl.online.mining.app.mvp.view.IRegisterView;
+import com.qkl.online.mining.app.ui.view.CountDownTextView;
 import com.qkl.online.mining.app.utils.CommonsUtils;
 import com.qkl.online.mining.app.utils.ToastUtils;
 
@@ -34,7 +35,8 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
      * 2=找回密码
      * 3=找回支付密码
      */
-    public void getCode(String email, int type) {
+    public void getCode(String email, int type, final CountDownTextView countDownTextView) {
+        mView.showLoading();
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("email", email);
@@ -42,9 +44,9 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
             e.printStackTrace();
         }
         String url;
-        if(type == 1) {
+        if (type == 1) {
             url = UrlConfig.getSendCodeUrl();
-        } else if(type == 2) {
+        } else if (type == 2) {
             url = UrlConfig.getSendCodeByForgetUrl();
         } else {
             url = UrlConfig.getSendCodeByForgetUrl();
@@ -52,16 +54,21 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
         OkGo.<JSONObject>post(url)
                 .tag(url)
                 .upJson(jsonObject)
+                .headers("language", CommonsUtils.getLanguage())
                 .execute(new JsonCallback<JSONObject>() {
                     @Override
                     public void onSuccess(Response<JSONObject> response) {
-                        if(response != null) {
+                        mView.hideLoading();
+                        if (response != null) {
                             JSONObject object = response.body();
-                            if(object != null) {
+                            if (object != null) {
                                 int code = object.optInt("code", -1);
-                                if(code == 0) {
+                                if (code == 0) {
                                     // 成功
                                     ToastUtils.showShort(R.string.register_send_msg_success);
+                                    if (countDownTextView != null) {
+                                        countDownTextView.startTimer();
+                                    }
                                 } else {
                                     // 失败
                                     ToastUtils.showShort(R.string.register_send_msg_failed);
@@ -73,6 +80,7 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
                     @Override
                     public void onError(Response<JSONObject> response) {
                         super.onError(response);
+                        mView.hideLoading();
                         ToastUtils.showShort(R.string.register_send_msg_failed);
                     }
                 });
@@ -80,6 +88,7 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
 
     /**
      * 提交注册
+     *
      * @param email
      * @param msgCode
      * @param password
@@ -98,15 +107,16 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
         }
         OkGo.<JSONObject>post(UrlConfig.getRegisterUserUrl())
                 .tag(this)
+                .headers("language", CommonsUtils.getLanguage())
                 .upJson(jsonObject)
                 .execute(new JsonCallback<JSONObject>() {
                     @Override
                     public void onSuccess(Response<JSONObject> response) {
                         mView.hideLoading();
-                        if(response != null) {
+                        if (response != null) {
                             JSONObject object = response.body();
                             int code = object.optInt("code", -1);
-                            if(code == 0) {
+                            if (code == 0) {
                                 // 成功
                                 mView.result(true);
                                 ToastUtils.showShort(R.string.register_success);
@@ -130,6 +140,7 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
 
     /**
      * 忘记密码，重置
+     *
      * @param email
      * @param code
      * @param newPassword
@@ -147,14 +158,15 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
         OkGo.<JSONObject>post(UrlConfig.getForgetPasswordUrl())
                 .tag(this)
                 .upJson(jsonObject)
+                .headers("language", CommonsUtils.getLanguage())
                 .execute(new JsonCallback<JSONObject>() {
                     @Override
                     public void onSuccess(Response<JSONObject> response) {
                         mView.hideLoading();
                         JSONObject object = response.body();
-                        if(object != null) {
+                        if (object != null) {
                             int code = object.optInt("code", -1);
-                            if(code == 0) {
+                            if (code == 0) {
                                 ToastUtils.showShort(R.string.please_forget_pwd_update_success);
                                 mView.result(true);
                             } else {
@@ -174,6 +186,7 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
 
     /**
      * 忘记支付密码，重置
+     *
      * @param email
      * @param code
      * @param newPassword
@@ -197,9 +210,9 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
                     public void onSuccess(Response<JSONObject> response) {
                         mView.hideLoading();
                         JSONObject object = response.body();
-                        if(object != null) {
+                        if (object != null) {
                             int code = object.optInt("code", -1);
-                            if(code == 0) {
+                            if (code == 0) {
                                 ToastUtils.showShort(R.string.please_forget_pwd_update_success);
                                 mView.result(true);
                             } else {

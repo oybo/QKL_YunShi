@@ -69,7 +69,7 @@ public class PurchaseStarActivity extends BaseActivity<StarPresenter> implements
         if(mStarProduct != null) {
             GlideImageLoader.loadImage(this, mStarProduct.getMinerImg(), mImageView);
 
-            mNameTxt.setText(getXmlString(R.string.purchase_star_name_txt, mStarProduct.getDescription()));
+            mNameTxt.setText(getXmlString(R.string.purchase_star_name_txt, mStarProduct.getMinerName()));
             mPriceTxt.setText(getXmlString(R.string.purchase_star_price_txt, mStarProduct.getSellPrice()));
             mSuanLiTxt.setText(getXmlString(R.string.purchase_star_suanli_txt, mStarProduct.getHashrate()));
             mZhouQiTxt.setText(

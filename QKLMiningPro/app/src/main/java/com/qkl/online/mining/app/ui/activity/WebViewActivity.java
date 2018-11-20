@@ -13,6 +13,7 @@ import com.qkl.online.mining.app.application.AccountManager;
 import com.qkl.online.mining.app.data.commons.Constants;
 import com.qkl.online.mining.app.ui.view.HeaderView;
 import com.qkl.online.mining.app.ui.view.browse.ProgressBarWebView;
+import com.qkl.online.mining.app.utils.CommonsUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,6 +50,8 @@ public class WebViewActivity extends AppCompatActivity {
         if(header) {
             try {
                 headers = new HashMap<>();
+                headers.put("language", CommonsUtils.getLanguage());
+                headers.put("from", "android");
                 headers.put("Authorization", AccountManager.getInstance().getAccountToken());
             } catch (Exception e) {
                 e.printStackTrace();

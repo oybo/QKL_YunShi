@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Marble Planet</string>
+    <string name="app_name">Yun Planet</string>
     <string name="action_settings">Settings</string>
 
     <string name="progress_dialog_holdon">Please Wait</string>
@@ -23,14 +23,14 @@
     <string name="main_tab_userinfo">Personal</string>
     <string name="main_star_mysytar_txt">My planet</string>
     <string name="main_star_mysytar_not_available_txt">You haven\'t buy planet</string>
-    <string name="main_shengyu_kj_txt">My mill: %1$s (%2$s) remaining</string>
+    <string name="main_shengyu_kj_txt">My planet: %1$s (%2$s) remaining</string>
     <string name="main_mywallet_txt">My wallet</string>
     <string name="main_ynu_txt">YUNT</string>
     <string name="main_parities_ynu_txt">Exchange YUN</string>
     <string name="main_parities_ynut_txt">Exchange YUNT</string>
-    <string name="parities_ynu_input_number_txt">Please enter the number of YUNT,at least%1$s个</string>
+    <string name="parities_ynu_input_number_txt">Please enter the number of YUNT,at least%1$s</string>
     <string name="parities_ynu_input_number_number_check_txt">YUNT number may not be less than %1$s</string>
-    <string name="parities_ynu_need_yunt_txt">(Estimated for%1$s个YUN)</string>
+    <string name="parities_ynu_need_yunt_txt">(Estimated for%1$sYUN)</string>
     <string name="parities_ynu_charge_txt">Poundage</string>
     <string name="parities_ynu_charge_value_txt">%1$sYUNT</string>
     <string name="parities_ynu_atexchange_txt">Exchange Rate：%1$s</string>
@@ -46,15 +46,15 @@
     <string name="parities_ynut_in_tips_txt">(Note: please send the corresponding YUN, turn to the above address, stay YUN to the address confirmed automatically filling the YUNT into account)</string>
     <string name="home_kc_dump_energy_txt">YUN Data</string>
     <string name="home_kc_transaction_record_txt">Records of mining pool transactions</string>
-    <string name="home_kc_suanli_txt">Marble record</string>
-    <string name="home_kc_ynm_move_towards_txt">YUN Price To</string>
+    <string name="home_kc_suanli_txt">YUNT Record</string>
+    <string name="home_kc_ynm_move_towards_txt">YUN Price</string>
     <string name="yun_usdt_exchange_txt">YUN/USDT：%1$s$</string>
     <string name="yunt_my_money_txt">My YUNT：%1$s</string>
     <string name="game_today_task_txt">Today\'s task</string>
 
     <!--    注册      -->
     <string name="register_page_title">Registered</string>
-    <string name="register_page_welcome">Welcome to the marble planet</string>
+    <string name="register_page_welcome">Welcome to the yun planet</string>
     <string name="register_input_email">Please enter the email address</string>
     <string name="register_get_code">Get Code</string>
     <string name="register_input_code">Please enter the verification code</string>
@@ -67,12 +67,12 @@
     <string name="register_send_msg_failed">Failed to get verification code</string>
     <string name="register_success">Registered successfully</string>
     <string name="register_failed">Registration failed</string>
-    <string name="register_xieyi_select">You read and agree to marble ball stars with our talks</string>
-    <string name="register_xieyi_tip">The user agrees to marble planet Agreement</string>
+    <string name="register_xieyi_select">Please you reading level agree that yun ball stars in our talks</string>
+    <string name="register_xieyi_tip">The user agrees to yun planet Agreement</string>
     <string name="main_exit_app_tips_tx">Again according to the exit</string>
 
     <!--    登录      -->
-    <string name="login_page_title">Marble planet login</string>
+    <string name="login_page_title">Yun planet login</string>
     <string name="login_input_loginname">Please enter the email address</string>
     <string name="login_input_password">Please enter a password</string>
     <string name="login_login">Login</string>
@@ -107,7 +107,7 @@
 
     <!--    常见问题      -->
     <string name="issue_page_title">Contact customer service</string>
-    <string name="issue_name_txt">Rookie help</string>
+    <string name="issue_name_txt">Help</string>
     <string name="issue_contact_phone_txt">customer service mailbox %1$s</string>
 
     <!--    其它      -->
@@ -175,7 +175,7 @@
     <string name="purchase_star_name_txt">Star name：%1$s</string>
     <string name="purchase_star_title_txt">Name：%1$s</string>
     <string name="purchase_star_title_null_txt">Null</string>
-    <string name="purchase_star_affirm_txt">You confirm the cost%1$s%2$sbuy?</string>
+    <string name="purchase_star_affirm_txt">Do you confirm that it costs %1$s %2$s to purchase?</string>
     <string name="purchase_star_price_txt">Price：%1$sYUNT</string>
     <string name="purchase_star_suanli_txt">Calculate power：%1$sTP/s</string>
     <string name="purchase_star_zhouqi_txt">Cycle：%1$s</string>
@@ -192,9 +192,9 @@
 
     <!--    邀请节点      -->
     <string name="invite_node_page_title">Invite Planet</string>
-    <string name="invite_node_scan_tips">Flicking a register to download</string>
+    <string name="invite_node_scan_tips">San and Download</string>
     <string name="invite_node_invitation_code">Invite code：%1$s</string>
-    <string name="invite_node_onclick_copy_link">(Click on the copy)</string>
+    <string name="invite_node_onclick_copy_link">(Click on copy)</string>
     <string name="invite_node_copy_link">Copy link</string>
     <string name="invite_node_copy_success">Copy success</string>
     <string name="invite_node_bt">Invite Planet</string>

@@ -16,6 +16,7 @@ import com.qkl.online.mining.app.ui.fragment.GameFragment;
 import com.qkl.online.mining.app.ui.fragment.HomeFragment;
 import com.qkl.online.mining.app.ui.fragment.StarFragment;
 import com.qkl.online.mining.app.ui.fragment.UserInfoFragment;
+import com.qkl.online.mining.app.utils.IntentUtil;
 import com.qkl.online.mining.app.utils.ToastUtils;
 import butterknife.BindView;
 

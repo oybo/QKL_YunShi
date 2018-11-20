@@ -12,6 +12,7 @@ import com.lzy.okgo.cookie.CookieJarImpl;
 import com.lzy.okgo.cookie.store.SPCookieStore;
 import com.lzy.okgo.model.HttpHeaders;
 import com.orhanobut.hawk.Hawk;
+import com.qkl.online.mining.app.utils.CommonsUtils;
 import com.qkl.online.mining.app.utils.ToastUtils;
 import com.qkl.online.mining.app.utils.languagelib.MultiLanguageUtil;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -41,14 +42,14 @@ public class AppContext extends Application {
 
         mInstance = this;
 
+        // 多语言
+        MultiLanguageUtil.init(this);
         //SharedPreferences
         Hawk.init(this).build();
         // 网络请求库
         initOkGo();
         // 换肤框架-夜日间切换
         initNightDay();
-        // 多语言
-        MultiLanguageUtil.init(this);
 
         CrashReport.initCrashReport(getApplicationContext(), "13a4a47be8", false);
     }
@@ -69,6 +70,10 @@ public class AppContext extends Application {
     private void initOkGo() {
         HttpHeaders headers = new HttpHeaders();
         headers.put("Content-Type", "application/json");
+        headers.put("language", CommonsUtils.getLanguage());
+        headers.put("version", CommonsUtils.getSoftVersionName(this));
+        headers.put("from", "android");
+
 //        HttpParams params = new HttpParams();
 //        params.put("commonParamsKey1", "commonParamsValue1");     //param支持中文,直接传,不要自己编码
 //        params.put("commonParamsKey2", "这里支持中文参数");

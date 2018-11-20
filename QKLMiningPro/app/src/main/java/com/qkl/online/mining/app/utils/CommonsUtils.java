@@ -15,6 +15,7 @@ import android.text.TextUtils;
 import com.orhanobut.hawk.Hawk;
 import com.qkl.online.mining.app.R;
 import com.qkl.online.mining.app.application.AppContext;
+import com.qkl.online.mining.app.utils.languagelib.MultiLanguageUtil;
 
 import java.lang.reflect.Method;
 import java.util.UUID;
@@ -83,6 +84,23 @@ public class CommonsUtils {
         recyclerView.addItemDecoration(divider);
     }
 
+
+    /**
+     * 获取App名称
+     *
+     * @return App名称
+     */
+    public static String getAppName() {
+        try {
+            PackageManager pm = AppContext.getInstance().getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(AppContext.getInstance().getPackageName(), 0);
+            return pi == null ? null : pi.applicationInfo.loadLabel(pm).toString();
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     /**
      * 获取应用的版本名称（用于显示给用户时使用）
      * 使用 x.yy.mmdd 格式, 如 1.12.0906
@@ -112,7 +130,7 @@ public class CommonsUtils {
         String id = Hawk.get("devicesID", "");
         if (id.length() == 0) {
             try {
-                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
                     id = ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
                 }
             } catch (Exception e) {
@@ -122,7 +140,7 @@ public class CommonsUtils {
         }
         if (id.length() == 0) {
             try {
-                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
                     id = ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).getSimSerialNumber();
                 }
             } catch (Exception e) {
@@ -132,7 +150,7 @@ public class CommonsUtils {
         }
         if (id.length() == 0) {
             try {
-                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED
+                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED
                         && ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED
                         && ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
                     id = ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).getLine1Number();
@@ -156,6 +174,48 @@ public class CommonsUtils {
             Hawk.put("devicesID", id);
         }
         return id;
+    }
+
+    public static String getLanguage() {
+        String language = "zh-TW";
+        try {
+            int languageType = MultiLanguageUtil.getInstance().getLanguageType();
+            switch (languageType) {
+                case 1:
+                    language = "zh-CN";
+                    break;
+                case 2:
+                    language = "zh-TW";
+                    break;
+                case 3:
+                    language = "en";
+                    break;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return language;
+    }
+
+    /**
+     * 我邀请的星球列表-传递需要单独把en改成en-us
+     * @return
+     */
+    public static String getMyTeamLanguage() {
+        String language = "zh-CN";
+        int languageType = MultiLanguageUtil.getInstance().getLanguageType();
+        switch (languageType) {
+            case 1:
+                language = "zh-CN";
+                break;
+            case 2:
+                language = "zh-TW";
+                break;
+            case 3:
+                language = "en-us";
+                break;
+        }
+        return language;
     }
 
 }

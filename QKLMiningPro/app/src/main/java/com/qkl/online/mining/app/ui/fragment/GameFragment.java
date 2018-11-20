@@ -1,5 +1,6 @@
 package com.qkl.online.mining.app.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -12,13 +13,16 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lazy.viewpager.fragment.LazyFragmentLazy;
 import com.qkl.online.mining.app.R;
+import com.qkl.online.mining.app.data.commons.Constants;
 import com.qkl.online.mining.app.data.commons.UrlConfig;
 import com.qkl.online.mining.app.data.entity.BannerBean;
 import com.qkl.online.mining.app.data.entity.Exchange;
 import com.qkl.online.mining.app.data.entity.GameBean;
+import com.qkl.online.mining.app.data.event.EventBase;
 import com.qkl.online.mining.app.mvp.presenter.GamePresenter;
 import com.qkl.online.mining.app.mvp.view.IGameView;
 import com.qkl.online.mining.app.ui.adapter.GameAdapter;
+import com.qkl.online.mining.app.ui.view.FullyLinearLayoutManager;
 import com.qkl.online.mining.app.ui.view.VpSwipeRefreshLayout;
 import com.qkl.online.mining.app.utils.CommonsUtils;
 import com.qkl.online.mining.app.utils.IntentUtil;
@@ -36,8 +40,11 @@ import java.util.List;
 public class GameFragment extends LazyFragmentLazy<GamePresenter> implements IGameView, BaseQuickAdapter.OnItemClickListener, OnBannerListener {
 
     private static Handler mHandler = new Handler();
+    private static final long REFRESH_TIME = 5 * 60000;
+    private boolean startOnly;
 
     private VpSwipeRefreshLayout mSwipeRefreshLayout;
+    private View mHeaderView;
 
     private Banner mBanner;
     private List<BannerBean.ListEntity> mBannerList;
@@ -64,7 +71,9 @@ public class GameFragment extends LazyFragmentLazy<GamePresenter> implements IGa
     private void initView() {
         setTitleBar(findViewById(R.id.fragment_game_titleview));
 
-        mBanner = (Banner) findViewById(R.id.fragment_game_banner);
+        mHeaderView = View.inflate(getApplicationContext(), R.layout.fragment_header_game, null);
+
+        mBanner = (Banner) mHeaderView.findViewById(R.id.fragment_game_banner);
         mRecyclerView = (RecyclerView) findViewById(R.id.fragment_game_recyclerview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setHasFixedSize(true);
@@ -82,7 +91,8 @@ public class GameFragment extends LazyFragmentLazy<GamePresenter> implements IGa
 
         // 刷新监听
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override public void onRefresh() {
+            @Override
+            public void onRefresh() {
                 // 开始转动
                 mSwipeRefreshLayout.setRefreshing(true);
                 // 获取游戏列表
@@ -101,6 +111,8 @@ public class GameFragment extends LazyFragmentLazy<GamePresenter> implements IGa
 
     private void initData() {
         mAdapter = new GameAdapter(getActivity());
+        mAdapter.addHeaderView(mHeaderView);
+
         mRecyclerView.setAdapter(mAdapter);
         // 加载更多
         mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
@@ -115,6 +127,16 @@ public class GameFragment extends LazyFragmentLazy<GamePresenter> implements IGa
         mPresenter.getBanner();
         // 获取游戏列表
         mPresenter.getGameList(currentPage);
+    }
+
+    @Override
+    protected void onEventCallback(EventBase eventBase) {
+        super.onEventCallback(eventBase);
+        String action = eventBase.getAction();
+        if(Constants.REFRESH_GAME_LIST_KEY.equals(action)) {
+            // 退出游戏重新登录，需要重新刷新游戏列表
+            mPresenter.getGameList(currentPage);
+        }
     }
 
     // 首页Banner回调
@@ -152,21 +174,22 @@ public class GameFragment extends LazyFragmentLazy<GamePresenter> implements IGa
 
     /**
      * 游戏任务列表
+     *
      * @param gameBean
      */
     @Override
     public void resultGame(GameBean gameBean) {
-        if(gameBean != null) {
+        if (gameBean != null) {
             List<GameBean.ListBean> listBeans = gameBean.getList();
 
-            if(currentPage == 1) {
+            if (currentPage == 1) {
                 mAdapter.setNewData(listBeans);
                 mAdapter.loadMoreComplete();
-                if(listBeans.size() < 10) {
+                if (listBeans.size() < 10) {
                     mAdapter.loadMoreEnd(true);
                 }
             } else {
-                if(listBeans != null && listBeans.size() > 0) {
+                if (listBeans != null && listBeans.size() > 0) {
                     mAdapter.addData(listBeans);
                     mAdapter.loadMoreComplete();
                 } else {
@@ -179,12 +202,31 @@ public class GameFragment extends LazyFragmentLazy<GamePresenter> implements IGa
         }
 
         currentPage++;
+
+        if (!startOnly) {
+            startOnly = true;
+            mHandler.postDelayed(refreshRunnable, REFRESH_TIME);
+        }
+    }
+
+    private Runnable refreshRunnable = new Runnable() {
+        @Override
+        public void run() {
+            refreshGameList();
+            mHandler.postDelayed(refreshRunnable, REFRESH_TIME);
+        }
+    };
+
+    public void refreshGameList() {
+        // 获取游戏列表
+        currentPage = 1;
+        mPresenter.getGameList(currentPage);
     }
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         GameBean.ListBean item = mAdapter.getItem(position);
-        if(item != null) {
+        if (item != null) {
             IntentUtil.ToGameWebViewActivity(getActivity(), item.getGameName(), UrlConfig.getGameDefultUrl(item));
         }
     }

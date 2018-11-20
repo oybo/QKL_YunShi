@@ -2,7 +2,8 @@
 <com.qkl.online.mining.app.ui.view.VpSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fragment_star_refreshlayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -134,9 +135,11 @@
         <TextView
             android:id="@+id/fragment_star_make"
             android:layout_width="130dip"
-            android:layout_height="30dip"
+            android:layout_height="wrap_content"
             android:layout_above="@id/fragment_star_recyclerview"
             android:gravity="center"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip"
             android:text="@string/public_star_make_txt"
             android:textColor="@color/color_FFFF31"
             android:textSize="14sp" />

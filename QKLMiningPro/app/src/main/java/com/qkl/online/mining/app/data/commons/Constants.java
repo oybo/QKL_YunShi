@@ -7,6 +7,7 @@ public class Constants {
 
     public static final String REFRESH_USER_INFO_KEY = "REFRESH_USER_INFO_KEY";
     public static final String REFRESH_MY_STAR_KEY = "REFRESH_MY_STAR_KEY";
+    public static final String REFRESH_GAME_LIST_KEY = "REFRESH_GAME_LIST_KEY";
 
     public static final String WELCOME_BG_IMAGEVIEW_PATH_KEY = "WELCOME_BG_IMAGEVIEW_PATH_KEY";
 

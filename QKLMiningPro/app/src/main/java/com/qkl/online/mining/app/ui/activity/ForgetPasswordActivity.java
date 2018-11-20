@@ -61,9 +61,7 @@ public class ForgetPasswordActivity extends BaseActivity<RegisterPresenter> impl
         }
 
         if(!mCountDownTextView.isCountDown()) {
-            mCountDownTextView.startTimer();
-
-            mPresenter.getCode(email, 2);
+            mPresenter.getCode(email, 2, mCountDownTextView);
         }
     }
 

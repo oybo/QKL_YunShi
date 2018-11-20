@@ -12,6 +12,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lazy.viewpager.fragment.LazyFragmentLazy;
 import com.qkl.online.mining.app.R;
 import com.qkl.online.mining.app.application.AccountManager;
+import com.qkl.online.mining.app.data.entity.AppCommonsConfig;
 import com.qkl.online.mining.app.data.entity.BannerBean;
 import com.qkl.online.mining.app.data.entity.DictConfig;
 import com.qkl.online.mining.app.data.entity.HomeNews;
@@ -73,10 +74,9 @@ public class HomeFragment extends LazyFragmentLazy<HomePresenter> implements IHo
         mBanner = (Banner) findViewById(R.id.fragment_home_banner);
         mMarqueeView = (MarqueeView) findViewById(R.id.fragment_home_marqueeview);
         mSuitLines = (SuitLines) findViewById(R.id.fragment_home_ynm_chartline);
-        mRecyclerView = (RecyclerView) findViewById(R.id.fragment_home_recyclerview);
         mDumpEnergyTxt = (TextView) findViewById(R.id.fragment_home_kc_dump_energy_txt);
         mSuanLiTxt = (TextView) findViewById(R.id.fragment_home_kc_suanli_txt);
-
+        mRecyclerView = (RecyclerView) findViewById(R.id.fragment_home_recyclerview);
         mRecyclerView.setLayoutManager(new FullyLinearLayoutManager(getActivity()));
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setNestedScrollingEnabled(false);
@@ -163,22 +163,40 @@ public class HomeFragment extends LazyFragmentLazy<HomePresenter> implements IHo
     @OnClick(R.id.fragment_home_kc_dump_energy_layout)
     void kCEnergy() {
         // 矿池储量
+        String tokenHolderUrl = null;
         DictConfig dictConfig = AccountManager.getInstance().getDictConfig();
-        if(dictConfig != null && !TextUtils.isEmpty(dictConfig.getTokenHolderUrl())) {
+        if (dictConfig != null && !TextUtils.isEmpty(dictConfig.getTokenHolderUrl())) {
+            tokenHolderUrl = dictConfig.getTokenHolderUrl();
+        }
+        if (TextUtils.isEmpty(tokenHolderUrl)) {
+            AppCommonsConfig appCommonsConfig = AccountManager.getInstance().getAppCommonsConfig();
+            if (appCommonsConfig != null) {
+                tokenHolderUrl = appCommonsConfig.getTokenHolderUrl();
+            }
+        }
+        if (!TextUtils.isEmpty(tokenHolderUrl)) {
             IntentUtil.ToWebViewActivity(getActivity(),
-                    "YUNT data",
-                    dictConfig.getTokenHolderUrl());
+                    "YUN data", tokenHolderUrl);
         }
     }
 
     @OnClick(R.id.fragment_home_kc_suanli_layout)
     void kCSuanLi() {
         // 矿池总算力
+        String yuntListUrl = null;
         DictConfig dictConfig = AccountManager.getInstance().getDictConfig();
-        if(dictConfig != null && !TextUtils.isEmpty(dictConfig.getYuntListUrl())) {
+        if (dictConfig != null && !TextUtils.isEmpty(dictConfig.getYuntListUrl())) {
+            yuntListUrl = dictConfig.getYuntListUrl();
+        }
+        if (TextUtils.isEmpty(yuntListUrl)) {
+            AppCommonsConfig appCommonsConfig = AccountManager.getInstance().getAppCommonsConfig();
+            if (appCommonsConfig != null) {
+                yuntListUrl = appCommonsConfig.getYuntListUrl();
+            }
+        }
+        if (!TextUtils.isEmpty(yuntListUrl)) {
             IntentUtil.ToWebViewActivity(getActivity(),
-                    "YUNT data",
-                    dictConfig.getYuntListUrl());
+                    "YUNT data", yuntListUrl);
         }
     }
 
@@ -216,7 +234,7 @@ public class HomeFragment extends LazyFragmentLazy<HomePresenter> implements IHo
                 }
             }
         }
-        mMarqueeView.setOnItemClickListener(this);
+//        mMarqueeView.setOnItemClickListener(this);
         mMarqueeView.startWithList(items);
     }
 

@@ -1,6 +1,7 @@
 package com.qkl.online.mining.app.mvp.presenter;
 
 import android.app.Activity;
+import android.text.TextUtils;
 
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
@@ -25,7 +26,7 @@ import org.json.JSONObject;
 
 public class LoginPresenter extends BasePresenter<ILoginView> {
 
-    public LoginPresenter(Activity context, ILoginView view) {
+    public LoginPresenter(final Activity context, ILoginView view) {
         super(context, view);
     }
 
@@ -34,21 +35,7 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
         try {
             jsonObject.put("email", email);
             jsonObject.put("password", password);
-
-            String language = "zh-CN";
-            int languageType = MultiLanguageUtil.getInstance().getLanguageType();
-            switch (languageType) {
-                case 1:
-                    language = "zh-CN";
-                    break;
-                case 2:
-                    language = "zh-TW";
-                    break;
-                case 3:
-                    language = "en";
-                    break;
-            }
-            jsonObject.put("language", language);
+            jsonObject.put("language", CommonsUtils.getLanguage());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -58,25 +45,33 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
                 .execute(new JsonCallback<JSONObject>() {
                     @Override
                     public void onSuccess(Response<JSONObject> response) {
-                        JSONObject object = response.body();
+                        final JSONObject object = response.body();
                         if(object != null) {
                             int code = object.optInt("code", -1);
                             if(code == 0) {
                                 // 成功
-                                JSONObject dataObject = object.optJSONObject("data");
-                                String access_token = dataObject.optString("access_token");
-                                AccountManager.getInstance().saveUser(access_token);
-                                // 回调
-                                mView.loginSuccess();
-                                // 登录之后获取用户信息
-                                AccountManager.getInstance().getUserInfo();
-                                // 用户账户信息余额
-                                AccountManager.getInstance().getUserYUNTData();
-                                // 获取实时汇率接口
-                                AccountManager.getInstance().getYunEchangeRate();
+                                // 判断是否有获取到getYunPlanetConfigUrl接口
+                                if(AccountManager.getInstance().getAppCommonsConfig() == null) {
+                                    AccountManager.getInstance().getYunPlanetConfig(new JsonCallback() {
+                                        @Override
+                                        public void onSuccess(Response response) {
+                                            callLoginSuccess(object);
+                                        }
+
+                                        @Override
+                                        public void onError(Response response) {
+                                            super.onError(response);
+                                            callLoginError(object);
+                                            mView.hideLoading();
+                                        }
+                                    });
+                                    return;
+                                }
+
+                                callLoginSuccess(object);
                                 return;
                             } else {
-                                ToastUtils.showShort(R.string.login_failed);
+                                callLoginError(object);
                             }
                         }
                         mView.hideLoading();
@@ -93,6 +88,26 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
                         mView.hideLoading();
                     }
                 });
+    }
+
+    private void callLoginSuccess(JSONObject object) {
+        JSONObject dataObject = object.optJSONObject("data");
+        String access_token = dataObject.optString("access_token");
+        AccountManager.getInstance().saveUser(access_token);
+        // 回调
+        mView.loginSuccess();
+        // 登录之后获取用户信息
+        AccountManager.getInstance().getUserInfo();
+        // 用户账户信息余额
+        AccountManager.getInstance().getUserYUNTData();
+        // 获取实时汇率接口
+        AccountManager.getInstance().getYunEchangeRate();
+    }
+
+    private void callLoginError(JSONObject object) {
+        String msg = object.optString("msg",
+                CommonsUtils.getXmlString(mContext, R.string.login_failed));
+        ToastUtils.showShort(msg);
     }
 
 }

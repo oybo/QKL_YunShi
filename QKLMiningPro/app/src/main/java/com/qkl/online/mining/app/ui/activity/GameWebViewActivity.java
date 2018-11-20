@@ -10,7 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.view.View;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.orhanobut.hawk.Hawk;
 import com.qkl.online.mining.app.R;
 import com.qkl.online.mining.app.application.AccountManager;
@@ -25,6 +28,7 @@ import com.qkl.online.mining.app.ui.view.browse.ProgressBarWebView;
 import com.qkl.online.mining.app.utils.CommonsUtils;
 import com.qkl.online.mining.app.utils.ScreenListener;
 import com.qkl.online.mining.app.utils.ToastUtils;
+import com.qkl.online.mining.app.utils.glide.GlideImageLoader;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -47,6 +51,9 @@ public class GameWebViewActivity extends AppCompatActivity {
     ProgressWheel mProgressWheel;
     @BindView(R.id.activity_webview_webview)
     ProgressBarWebView mWebView;
+
+    @BindView(R.id.fragment_game_loading_view)
+    ImageView mGameLoadingView;
 
     private AudioManager mAudioManager;
 
@@ -88,13 +95,14 @@ public class GameWebViewActivity extends AppCompatActivity {
                 mExitView.setVisibility(View.VISIBLE);
                 mProgressWheel.setVisibility(View.GONE);
                 mHeaderView.setVisibility(View.GONE);
+                mGameLoadingView.setVisibility(View.GONE);
             }
         });
 
         mExitView.SetClickListener(new OnDragViewClickListener() {
             @Override
             public void onDragViewListener(String name, String context) {
-                onBackPressed();
+                exit();
             }
         });
 
@@ -141,19 +149,23 @@ public class GameWebViewActivity extends AppCompatActivity {
 //        super.onBackPressed();
 
         if (!mWebView.getWebView().canGoBack()) {
-            // 提示是否退出
-            DialogTips dialogTips = new DialogTips(this);
-            dialogTips.setMessage(CommonsUtils.getXmlString(this, R.string.game_is_exit_txt));
-            dialogTips.setOkListenner(new OnDialogOkListenner() {
-                @Override
-                public void onClick() {
-                    finish();
-                }
-            });
-            dialogTips.setCancelListenner(null);
-            dialogTips.setCanceledOnTouchOutside(false);
-            dialogTips.show();
+            exit();
         }
+    }
+
+    private void exit() {
+        // 提示是否退出
+        DialogTips dialogTips = new DialogTips(this);
+        dialogTips.setMessage(CommonsUtils.getXmlString(this, R.string.game_is_exit_txt));
+        dialogTips.setOkListenner(new OnDialogOkListenner() {
+            @Override
+            public void onClick() {
+                finish();
+            }
+        });
+        dialogTips.setCancelListenner(null);
+        dialogTips.setCanceledOnTouchOutside(false);
+        dialogTips.show();
     }
 
     @Override

@@ -1,7 +1,10 @@
 package com.qkl.online.mining.app.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.text.TextUtils;
 
 import com.qkl.online.mining.app.data.entity.Exchange;
 import com.qkl.online.mining.app.data.entity.HomeNews;
@@ -109,6 +112,31 @@ public class IntentUtil {
             intent.putExtra("header", header);
         }
         context.startActivity(intent);
+    }
+
+    /**
+     * 跳转到浏览器
+     * @param context
+     * @param url
+     */
+    public static void goBrowser(Context context, String url) {
+        if(!TextUtils.isEmpty(url)) {
+            try {
+                // 系统自带浏览器
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                intent.setData(Uri.parse(url));
+                intent.setClassName("com.android.browser", "com.android.browser.BrowserActivity");
+                context.startActivity(intent);
+            } catch (Exception e) {
+                e.printStackTrace();
+                // 自选
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                intent.setData(Uri.parse(url));
+                context.startActivity(intent);
+            }
+        }
     }
 
     /**

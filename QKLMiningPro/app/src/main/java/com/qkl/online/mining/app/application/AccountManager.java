@@ -17,6 +17,7 @@ import com.qkl.online.mining.app.R;
 import com.qkl.online.mining.app.data.commons.Constants;
 import com.qkl.online.mining.app.data.commons.UrlConfig;
 import com.qkl.online.mining.app.data.entity.Account;
+import com.qkl.online.mining.app.data.entity.AppCommonsConfig;
 import com.qkl.online.mining.app.data.entity.DictConfig;
 import com.qkl.online.mining.app.data.entity.MyYuntEntity;
 import com.qkl.online.mining.app.data.entity.SSExchangerate;
@@ -342,13 +343,45 @@ public class AccountManager {
                 });
     }
 
+    private AppCommonsConfig mAppCommonsConfig;
+
+    public AppCommonsConfig getAppCommonsConfig() {
+        return mAppCommonsConfig;
+    }
+
+    public void getYunPlanetConfig(final JsonCallback jsonCallback) {
+        OkGo.<JSONObject>post(UrlConfig.getYunPlanetConfigUrl())
+                .tag(this)
+                .execute(new JsonCallback<JSONObject>() {
+                    @Override
+                    public void onSuccess(Response<JSONObject> response) {
+                        JSONObject jsonObject = response.body();
+                        if (jsonObject != null) {
+                            mAppCommonsConfig = Convert.forAppCommonsConfig(jsonObject);
+
+                            if(jsonCallback != null) {
+                                jsonCallback.onSuccess(null);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onError(Response<JSONObject> response) {
+                        super.onError(response);
+                        if(jsonCallback != null) {
+                            jsonCallback.onError(null);
+                        }
+                    }
+                });
+    }
+
     private boolean isForce;
 
     public void checkAppUpdate(final AppCompatActivity activity) {
         if (mDictConfig != null) {
             String serviceVersion = mDictConfig.getVersion();
             String appVersion = CommonsUtils.getSoftVersionName(activity);
-            if(TextUtils.isEmpty(serviceVersion) || TextUtils.isEmpty(appVersion)) {
+            if (TextUtils.isEmpty(serviceVersion) || TextUtils.isEmpty(appVersion)) {
                 return;
             }
 
@@ -356,13 +389,32 @@ public class AccountManager {
                 isForce = false;
                 String[] serviceStrs = serviceVersion.split("\\.");
                 String[] appStrs = appVersion.split("\\.");
+                boolean isUpdate = false;
+                if (Integer.parseInt(serviceStrs[0]) > Integer.parseInt(appStrs[0])) {
+                    isUpdate = true;
+                }
+                if(!isUpdate) {
+                    if (Integer.parseInt(serviceStrs[1]) > Integer.parseInt(appStrs[1])) {
+                        isUpdate = true;
+                    }
+                }
+                if(!isUpdate) {
+                    if ((Integer.parseInt(serviceStrs[1]) == Integer.parseInt(appStrs[1])) &&
+                            (Integer.parseInt(serviceStrs[2]) > Integer.parseInt(appStrs[2]))) {
+                        isUpdate = true;
+                    }
+                }
+                if (!isUpdate) {
+                    return;
+                }
+
                 if (Integer.parseInt(serviceStrs[0]) > Integer.parseInt(appStrs[0]) ||
                         Integer.parseInt(serviceStrs[1]) > Integer.parseInt(appStrs[1])) {
                     // 强制更新
                     isForce = true;
                 }
-                if(!isForce) {
-                    if(Integer.parseInt(appStrs[2]) > Integer.parseInt(serviceStrs[2])) {
+                if (!isForce) {
+                    if (Integer.parseInt(appStrs[2]) > Integer.parseInt(serviceStrs[2])) {
                         return;
                     }
                 }
@@ -383,7 +435,7 @@ public class AccountManager {
                     });
                 }
                 boolean isToday = TimeUtils.getToday().equals(Hawk.get(Constants.UPDATE_CACEL_TODAY_KEY));
-                if(!isForce && isToday) {
+                if (!isForce && isToday) {
                     return;
                 }
                 final AlertDialog dialog = builder.create();
@@ -395,7 +447,7 @@ public class AccountManager {
                     public void onClick(View v) {
                         try {
                             String updateUrl = mDictConfig.getUpdateUrl();
-                            IntentUtil.ToWebViewActivity(activity, "应用更新", updateUrl);
+                            IntentUtil.goBrowser(activity, updateUrl);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -425,7 +477,7 @@ public class AccountManager {
 
             jsonObject.put("email", userName);
             jsonObject.put("password", password);
-            jsonObject.put("language", "");
+            jsonObject.put("language", CommonsUtils.getLanguage());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -439,6 +491,10 @@ public class AccountManager {
                             int code = object.optInt("code", -1);
                             if (code == 0) {
                                 // 成功
+                                // 发送刷新游戏列表
+                                EventBase eventBase = new EventBase();
+                                eventBase.setAction(Constants.REFRESH_GAME_LIST_KEY);
+                                EventBus.getDefault().post(eventBase);
                                 JSONObject dataObject = object.optJSONObject("data");
                                 String access_token = dataObject.optString("access_token");
                                 AccountManager.getInstance().saveUser(access_token);

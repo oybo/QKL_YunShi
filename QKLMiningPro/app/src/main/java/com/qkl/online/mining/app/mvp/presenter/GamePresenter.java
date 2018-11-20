@@ -12,6 +12,7 @@ import com.qkl.online.mining.app.data.json.Convert;
 import com.qkl.online.mining.app.data.json.JsonCallback;
 import com.qkl.online.mining.app.data.json.LzyResponse;
 import com.qkl.online.mining.app.mvp.view.IGameView;
+import com.qkl.online.mining.app.utils.CommonsUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;

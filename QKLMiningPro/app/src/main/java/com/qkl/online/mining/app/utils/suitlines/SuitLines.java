@@ -962,10 +962,10 @@ public class SuitLines extends View {
         Collections.sort(bakUnits);
         Unit maxUnit = bakUnits.get(bakUnits.size() - 1);
         Unit minUnit = bakUnits.get(0);
-//        minAndMaxOfY[0] = Util.getCeil5(Math.min(minUnit.getValue(), 0));
-//        minAndMaxOfY[1] = Util.getCeil5(Math.max(maxUnit.getValue(), 0));
-        minAndMaxOfY[0] = 0f;
-        minAndMaxOfY[1] = 1f;
+        minAndMaxOfY[0] = Util.getCeil5(Math.min(minUnit.getValue(), 0));
+        minAndMaxOfY[1] = Util.getCeil5(Math.max(maxUnit.getValue(), 0));
+//        minAndMaxOfY[0] = 0f;
+//        minAndMaxOfY[1] = 1f;
     }
 
     /**

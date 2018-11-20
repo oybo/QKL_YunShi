@@ -16,6 +16,7 @@ import com.lazy.viewpager.fragment.LazyFragmentLazy;
 import com.qkl.online.mining.app.R;
 import com.qkl.online.mining.app.application.AccountManager;
 import com.qkl.online.mining.app.data.commons.Constants;
+import com.qkl.online.mining.app.data.entity.AppCommonsConfig;
 import com.qkl.online.mining.app.data.entity.DictConfig;
 import com.qkl.online.mining.app.data.entity.MyYuntEntity;
 import com.qkl.online.mining.app.data.entity.SSExchangerate;
@@ -23,6 +24,7 @@ import com.qkl.online.mining.app.data.entity.User;
 import com.qkl.online.mining.app.data.event.EventBase;
 import com.qkl.online.mining.app.mvp.presenter.UserInfoPresenter;
 import com.qkl.online.mining.app.mvp.view.IUserInfoView;
+import com.qkl.online.mining.app.ui.activity.WebViewActivity;
 import com.qkl.online.mining.app.ui.view.CircleImageView;
 import com.qkl.online.mining.app.ui.view.SeekBarFloat;
 import com.qkl.online.mining.app.utils.CommonsUtils;
@@ -219,19 +221,21 @@ public class UserInfoFragment extends LazyFragmentLazy<UserInfoPresenter> implem
 //            mStarNumberTxt.setText(String.valueOf(yuntEntity.getMiningBonus()));
 
             // 最低手续费  && 最高手续费
-            DictConfig dictConfig = AccountManager.getInstance().getDictConfig();
-            if(dictConfig != null) {
-                drawMinAmount = dictConfig.getDrawMinAmount();
-                drawMaxFeeRate = dictConfig.getDrawMaxFeeRate();
-                drawMinFeeRate = dictConfig.getDrawMinFeeRate();
-                mDHYunNumberET.setHint(CommonsUtils.getXmlString(getActivity(), R.string.parities_ynu_input_number_txt, String.valueOf(drawMinAmount)));
-                mDHMinNumberTxt.setText(CommonsUtils.getXmlString(getActivity(), R.string.parities_ynu_in_tips_txt, String.valueOf(drawMinAmount)));
+            AppCommonsConfig appCommonsConfig = AccountManager.getInstance().getAppCommonsConfig();
+            if (appCommonsConfig != null) {
+                drawMinAmount = appCommonsConfig.getDrawMinAmount();
+                drawMaxFeeRate = appCommonsConfig.getDrawMaxFeeRate();
+                drawMinFeeRate = appCommonsConfig.getDrawMinFeeRate();
+            } else {
+                DictConfig dictConfig = AccountManager.getInstance().getDictConfig();
+                if(dictConfig != null) {
+                    drawMinAmount = dictConfig.getDrawMinAmount();
+                    drawMaxFeeRate = dictConfig.getDrawMaxFeeRate();
+                    drawMinFeeRate = dictConfig.getDrawMinFeeRate();
+                }
             }
-//            mDHYunSeekBar.setMinF((float) yuntEntity.getMinFee());
-//            mDHYunSeekBar.setMaxF((float) yuntEntity.getMaxFee());
-//            mDHYunSeekBar.setProgressF((float) yuntEntity.getMinFee());
-//            mDHYunChargeValue = String.valueOf(yuntEntity.getMinFee());
-//            setDHYunChargeTxt();
+            mDHYunNumberET.setHint(CommonsUtils.getXmlString(getActivity(), R.string.parities_ynu_input_number_txt, String.valueOf(drawMinAmount)));
+            mDHMinNumberTxt.setText(CommonsUtils.getXmlString(getActivity(), R.string.parities_ynu_in_tips_txt, String.valueOf(drawMinAmount)));
 
             mDHYunChargeValue = "0";
             setDHYunChargeTxt();
@@ -316,7 +320,7 @@ public class UserInfoFragment extends LazyFragmentLazy<UserInfoPresenter> implem
                 // yun确定兑换
                 String inputAmount = mDHYunNumberET.getText().toString().trim();    // 输入的YUNT数量
                 if(TextUtils.isEmpty(inputAmount)) {
-                    ToastUtils.showShort(R.string.parities_ynu_input_number_txt);
+                    ToastUtils.showShort(R.string.parities_ynu_input_number_txt, String.valueOf(drawMinAmount));
                     return;
                 }
                 String payPassword = mDHPasswordET.getText().toString().trim();
@@ -364,7 +368,15 @@ public class UserInfoFragment extends LazyFragmentLazy<UserInfoPresenter> implem
                 break;
             case R.id.fragment_myteam_layout:
                 // 我的团队
-                IntentUtil.ToMyTeamActivity(getActivity());
+                AppCommonsConfig appCommonsConfig = AccountManager.getInstance().getAppCommonsConfig();
+                if(appCommonsConfig != null) {
+                    String url = appCommonsConfig.getInviteStartListUrl();
+                    if(!TextUtils.isEmpty(url)) {
+                        url += "?culture=" + CommonsUtils.getMyTeamLanguage() + "&mid=" + System.currentTimeMillis();
+                        IntentUtil.ToWebViewActivity(getActivity(), getXmlString(R.string.fragment_myteam_page_title), url, true);
+                    }
+                }
+//                IntentUtil.ToMyTeamActivity(getActivity());
                 break;
             case R.id.fragment_userinfo_invite_jiedian_layout:
                 // 邀请节点

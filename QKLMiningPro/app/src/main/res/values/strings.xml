@@ -23,7 +23,7 @@
     <string name="main_tab_userinfo">個人信息</string>
     <string name="main_star_mysytar_txt">我的星球</string>
     <string name="main_star_mysytar_not_available_txt">你還沒購買星球</string>
-    <string name="main_shengyu_kj_txt">我的礦機：%1$s（剩餘%2$s）</string>
+    <string name="main_shengyu_kj_txt">我的星球：%1$s（剩餘%2$s）</string>
     <string name="main_mywallet_txt">我的錢包</string>
     <string name="main_ynu_txt">雲石</string>
     <string name="main_parities_ynu_txt">兌換YUN</string>
@@ -67,7 +67,7 @@
     <string name="register_send_msg_failed">獲取驗證碼失敗</string>
     <string name="register_success">註冊成功</string>
     <string name="register_failed">註冊失敗</string>
-    <string name="register_xieyi_select">清您閱讀並同意雲石星球用戶協議</string>
+    <string name="register_xieyi_select">請您閱讀並同意雲石星球用戶協議</string>
     <string name="register_xieyi_tip">同意雲石星球用戶協議</string>
     <string name="main_exit_app_tips_tx">再按壹次退出</string>
 

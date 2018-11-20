@@ -1,10 +1,13 @@
 package com.qkl.online.mining.app.ui.view;
 
 import android.content.Context;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewConfiguration;
+import android.widget.AbsListView;
 
 /**
  *  *  author : oyb
@@ -61,6 +64,18 @@ public class VpSwipeRefreshLayout extends SwipeRefreshLayout {
         }
         // 如果是Y轴位移大于X轴，事件交给swipeRefreshLayout处理。
         return super.onInterceptTouchEvent(ev);
+    }
+
+    @Override
+    public boolean canChildScrollUp() {
+        View target = getChildAt(0);
+        if (target instanceof AbsListView) {
+            final AbsListView absListView = (AbsListView) target;
+            return absListView.getChildCount() > 0
+                    && (absListView.getFirstVisiblePosition() > 0 || absListView.getChildAt(0)
+                    .getTop() < absListView.getPaddingTop());
+        } else
+            return ViewCompat.canScrollVertically(target, -1);
     }
 
 }

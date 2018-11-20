@@ -72,6 +72,8 @@ public class InviteNodeActivity extends BaseActivity<PublicPresenter> implements
         if (dictConfig != null) {
             mAppNameTxt.setText(dictConfig.getAppName());
             mAppSummaryTxt.setText(dictConfig.getAppSummary());
+        } else {
+            mAppNameTxt.setText(CommonsUtils.getAppName());
         }
     }
 

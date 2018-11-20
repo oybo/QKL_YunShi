@@ -11,8 +11,8 @@
 
     <ImageView
         android:id="@+id/item_game_icon_view"
-        android:layout_width="38dip"
-        android:layout_height="38dip"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
         android:scaleType="fitXY" />
 
     <LinearLayout

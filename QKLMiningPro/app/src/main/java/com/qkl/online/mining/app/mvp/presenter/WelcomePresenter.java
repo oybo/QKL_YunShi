@@ -72,6 +72,7 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
     public void init() {
         // 系统配置字典接口 - 用在客服页面联系邮箱
         AccountManager.getInstance().getCommonsConfig();
+        AccountManager.getInstance().getYunPlanetConfig(null);
         mHandler.postDelayed(runnable, 2000);
     }
 

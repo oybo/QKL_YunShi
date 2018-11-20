@@ -68,8 +68,7 @@ public class RegisterUserActivity extends BaseActivity<RegisterPresenter> implem
         }
 
         if(!mCountDownTextView.isCountDown()) {
-            mCountDownTextView.startTimer();
-            mPresenter.getCode(email, 1);
+            mPresenter.getCode(email, 1, mCountDownTextView);
         }
     }
 

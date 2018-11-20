@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_ffffff"
+    android:background="@drawable/weather_bg"
     android:orientation="vertical">
 
     <com.qkl.online.mining.app.ui.view.browse.ProgressBarWebView
@@ -11,6 +11,13 @@
         style="@style/NumberProgressBar_Default"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/fragment_game_loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/game_loading" />
 
     <com.qkl.online.mining.app.ui.view.HeaderView
         android:id="@+id/activity_webview_headerview"
@@ -22,7 +29,7 @@
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_centerInParent="true"
-        app:matProg_barColor="@color/colorAccent"
+        app:matProg_barColor="@color/color_FF6700"
         app:matProg_progressIndeterminate="true" />
 
     <com.qkl.online.mining.app.ui.view.DragView

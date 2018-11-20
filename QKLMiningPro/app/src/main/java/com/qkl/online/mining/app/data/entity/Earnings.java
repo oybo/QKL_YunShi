@@ -9,11 +9,11 @@ public class Earnings extends BaseBean {
 
 
     /**
-     * totalCount : 6
+     * totalCount : 13
      * pageSize : 10
-     * totalPage : 1
+     * totalPage : 2
      * currPage : 1
-     * list : [{"billId":207061903770521600,"memberId":205648937061847040,"email":"309191428@qq.com","contextId":207061903212679168,"contextName":"收益分配账单ID","operatorId":0,"operatorName":"系统","openingBalance":0,"billAmount":100,"closingBalance":0,"operateCode":1003,"operateName":"收益分配账单ID","txid":null,"description":"收益分配账单ID","addTime":1538479015,"updateTime":1538479015,"payStatus":1001},{"billId":207062270092644352,"memberId":205648937061847040,"email":"309191428@qq.com","contextId":207062269723545600,"contextName":"收益分配账单ID","operatorId":0,"operatorName":"系统","openingBalance":0,"billAmount":100,"closingBalance":0,"operateCode":1003,"operateName":"收益分配账单ID","txid":null,"description":"收益分配账单ID","addTime":1538479102,"updateTime":1538479262,"payStatus":2001},{"billId":207064968355516416,"memberId":205648937061847040,"email":"309191428@qq.com","contextId":207064967835422720,"contextName":"收益分配账单ID","operatorId":0,"operatorName":"系统","openingBalance":0,"billAmount":100,"closingBalance":0,"operateCode":1003,"operateName":"收益分配账单ID","txid":null,"description":"收益分配账单ID","addTime":1538479745,"updateTime":1538479892,"payStatus":2001},{"billId":207075503386005504,"memberId":205648937061847040,"email":"309191428@qq.com","contextId":207075502920437760,"contextName":"收益分配账单ID","operatorId":0,"operatorName":"系统","openingBalance":0,"billAmount":100,"closingBalance":0,"operateCode":1003,"operateName":"收益分配账单ID","txid":null,"description":"收益分配账单ID","addTime":1538482257,"updateTime":1538482352,"payStatus":2001},{"billId":207133156581707776,"memberId":205648937061847040,"email":"309191428@qq.com","contextId":207133156082585600,"contextName":"收益分配账单ID","operatorId":0,"operatorName":"系统","openingBalance":0,"billAmount":100,"closingBalance":0,"operateCode":1003,"operateName":"收益分配账单ID","txid":null,"description":"收益分配账单ID","addTime":1538496003,"updateTime":1538496152,"payStatus":2001},{"billId":207495543155462144,"memberId":205648937061847040,"email":"309191428@qq.com","contextId":207495542656339968,"contextName":"收益分配账单ID","operatorId":0,"operatorName":"系统","openingBalance":0,"billAmount":100,"closingBalance":0,"operateCode":1003,"operateName":"收益分配账单ID","txid":null,"description":"收益分配账单ID","addTime":1538582402,"updateTime":1538582552,"payStatus":2001}]
+     * list : [{"billId":219980082633117696,"memberId":218667740888698880,"email":"fan1@qq.com","contextId":219980082545037312,"contextName":"邀请星球奖励","operatorId":0,"operatorName":"系统","openingBalance":0,"billAmount":50,"closingBalance":0,"operateCode":1005,"operateName":"邀請星球獎勵","txid":null,"description":"邀请星球奖励-流水单ID","addTime":1541558948,"updateTime":1541558960,"payStatus":2001,"unit":"YUNT","state":"完成"},{"billId":219852609002016768,"memberId":218667740888698880,"email":null,"contextId":219852603889160200,"contextName":"斗地主游戏","operatorId":0,"operatorName":"ldz","openingBalance":0,"billAmount":9,"closingBalance":0,"operateCode":1007,"operateName":"游戲勝利","txid":null,"description":"游戏胜利","addTime":1541528556,"updateTime":1541528556,"payStatus":1001,"unit":"YUNT","state":"進行中"},{"billId":219816744406093824,"memberId":218667740888698880,"email":"fan1@qq.com","contextId":219816744313819136,"contextName":null,"operatorId":0,"operatorName":null,"openingBalance":0,"billAmount":5,"closingBalance":0,"operateCode":1003,"operateName":"星球獎勵","txid":"","description":"星球奖励","addTime":1541520006,"updateTime":1541520928,"payStatus":2001,"unit":"YUNT","state":"完成"},{"billId":219816725544308736,"memberId":218667740888698880,"email":"fan1@qq.com","contextId":219816725510754304,"contextName":null,"operatorId":0,"operatorName":null,"openingBalance":0,"billAmount":50,"closingBalance":0,"operateCode":1002,"operateName":"星球收益","txid":"","description":"星球收益","addTime":1541520001,"updateTime":1541521205,"payStatus":2001,"unit":"YUNT","state":"完成"},{"billId":219669445071736832,"memberId":218667740888698880,"email":"fan1@qq.com","contextId":219669444585197568,"contextName":"邀请星球奖励","operatorId":0,"operatorName":"系统","openingBalance":0,"billAmount":25,"closingBalance":0,"operateCode":1005,"operateName":"邀請星球獎勵","txid":null,"description":"邀请星球奖励-流水单ID","addTime":1541484887,"updateTime":1541484900,"payStatus":2001,"unit":"YUNT","state":"完成"},{"billId":219454353923248128,"memberId":218667740888698880,"email":"fan1@qq.com","contextId":219454353881305088,"contextName":null,"operatorId":0,"operatorName":null,"openingBalance":0,"billAmount":50,"closingBalance":0,"operateCode":1002,"operateName":"星球收益","txid":"","description":"星球收益","addTime":1541433605,"updateTime":1541433670,"payStatus":2001,"unit":"YUNT","state":"完成"},{"billId":219410343682772992,"memberId":218667740888698880,"email":"fan1@qq.com","contextId":219410343640829952,"contextName":null,"operatorId":0,"operatorName":null,"openingBalance":0,"billAmount":50,"closingBalance":0,"operateCode":1002,"operateName":"星球收益","txid":"","description":"星球收益","addTime":1541423112,"updateTime":1541423525,"payStatus":2001,"unit":"YUNT","state":"完成"},{"billId":218974426652348416,"memberId":218667740888698880,"email":null,"contextId":218974425482137600,"contextName":"游戏胜利","operatorId":0,"operatorName":"ldz","openingBalance":0,"billAmount":72,"closingBalance":0,"operateCode":1007,"operateName":"游戲勝利","txid":null,"description":"游戏胜利","addTime":1541319181,"updateTime":1541319181,"payStatus":1001,"unit":"YUNT","state":"進行中"},{"billId":218730191839694848,"memberId":218667740888698880,"email":"fan1@qq.com","contextId":218730191592230912,"contextName":"星球收益","operatorId":0,"operatorName":"系统","openingBalance":0,"billAmount":55,"closingBalance":0,"operateCode":1002,"operateName":"星球收益","txid":null,"description":"星球收益","addTime":1541260951,"updateTime":1541260960,"payStatus":2001,"unit":"YUNT","state":"完成"},{"billId":218680297913454592,"memberId":218667740888698880,"email":null,"contextId":218680297045233660,"contextName":"游戏胜利","operatorId":0,"operatorName":"ldz","openingBalance":0,"billAmount":36,"closingBalance":0,"operateCode":1007,"operateName":"游戲勝利","txid":null,"description":"游戏胜利","addTime":1541249056,"updateTime":1541249056,"payStatus":1001,"unit":"YUNT","state":"進行中"}]
      */
 
     private int totalCount;
@@ -64,56 +64,60 @@ public class Earnings extends BaseBean {
 
     public static class ListBean {
         /**
-         * billId : 207061903770521600
-         * memberId : 205648937061847040
-         * email : 309191428@qq.com
-         * contextId : 207061903212679168
-         * contextName : 收益分配账单ID
+         * billId : 219980082633117696
+         * memberId : 218667740888698880
+         * email : fan1@qq.com
+         * contextId : 219980082545037312
+         * contextName : 邀请星球奖励
          * operatorId : 0
          * operatorName : 系统
-         * openingBalance : 0
-         * billAmount : 100
-         * closingBalance : 0
-         * operateCode : 1003
-         * operateName : 收益分配账单ID
+         * openingBalance : 0.0
+         * billAmount : 50.0
+         * closingBalance : 0.0
+         * operateCode : 1005
+         * operateName : 邀請星球獎勵
          * txid : null
-         * description : 收益分配账单ID
-         * addTime : 1538479015
-         * updateTime : 1538479015
-         * payStatus : 1001
+         * description : 邀请星球奖励-流水单ID
+         * addTime : 1541558948
+         * updateTime : 1541558960
+         * payStatus : 2001
+         * unit : YUNT
+         * state : 完成
          */
 
-        private String billId;
-        private String memberId;
+        private long billId;
+        private long memberId;
         private String email;
-        private String contextId;
+        private long contextId;
         private String contextName;
-        private String operatorId;
+        private int operatorId;
         private String operatorName;
-        private String openingBalance;
-        private String billAmount;
-        private String closingBalance;
-        private String operateCode;
+        private double openingBalance;
+        private double billAmount;
+        private double closingBalance;
+        private int operateCode;
         private String operateName;
-        private String txid;
+        private Object txid;
         private String description;
         private int addTime;
         private int updateTime;
         private int payStatus;
+        private String unit;
+        private String state;
 
-        public String getBillId() {
+        public long getBillId() {
             return billId;
         }
 
-        public void setBillId(String billId) {
+        public void setBillId(long billId) {
             this.billId = billId;
         }
 
-        public String getMemberId() {
+        public long getMemberId() {
             return memberId;
         }
 
-        public void setMemberId(String memberId) {
+        public void setMemberId(long memberId) {
             this.memberId = memberId;
         }
 
@@ -125,11 +129,11 @@ public class Earnings extends BaseBean {
             this.email = email;
         }
 
-        public String getContextId() {
+        public long getContextId() {
             return contextId;
         }
 
-        public void setContextId(String contextId) {
+        public void setContextId(long contextId) {
             this.contextId = contextId;
         }
 
@@ -141,11 +145,11 @@ public class Earnings extends BaseBean {
             this.contextName = contextName;
         }
 
-        public String getOperatorId() {
+        public int getOperatorId() {
             return operatorId;
         }
 
-        public void setOperatorId(String operatorId) {
+        public void setOperatorId(int operatorId) {
             this.operatorId = operatorId;
         }
 
@@ -157,35 +161,35 @@ public class Earnings extends BaseBean {
             this.operatorName = operatorName;
         }
 
-        public String getOpeningBalance() {
+        public double getOpeningBalance() {
             return openingBalance;
         }
 
-        public void setOpeningBalance(String openingBalance) {
+        public void setOpeningBalance(double openingBalance) {
             this.openingBalance = openingBalance;
         }
 
-        public String getBillAmount() {
+        public double getBillAmount() {
             return billAmount;
         }
 
-        public void setBillAmount(String billAmount) {
+        public void setBillAmount(double billAmount) {
             this.billAmount = billAmount;
         }
 
-        public String getClosingBalance() {
+        public double getClosingBalance() {
             return closingBalance;
         }
 
-        public void setClosingBalance(String closingBalance) {
+        public void setClosingBalance(double closingBalance) {
             this.closingBalance = closingBalance;
         }
 
-        public String getOperateCode() {
+        public int getOperateCode() {
             return operateCode;
         }
 
-        public void setOperateCode(String operateCode) {
+        public void setOperateCode(int operateCode) {
             this.operateCode = operateCode;
         }
 
@@ -197,11 +201,11 @@ public class Earnings extends BaseBean {
             this.operateName = operateName;
         }
 
-        public String getTxid() {
+        public Object getTxid() {
             return txid;
         }
 
-        public void setTxid(String txid) {
+        public void setTxid(Object txid) {
             this.txid = txid;
         }
 
@@ -236,6 +240,21 @@ public class Earnings extends BaseBean {
         public void setPayStatus(int payStatus) {
             this.payStatus = payStatus;
         }
-    }
 
+        public String getUnit() {
+            return unit;
+        }
+
+        public void setUnit(String unit) {
+            this.unit = unit;
+        }
+
+        public String getState() {
+            return state;
+        }
+
+        public void setState(String state) {
+            this.state = state;
+        }
+    }
 }

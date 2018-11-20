@@ -74,12 +74,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
 
     @Override
     protected void initData() {
-//        mLoginNameET.setText("944533800@qq.com");
-//        mPasswordET.setText("111111");
-//        mLoginNameET.setText("309191428@qq.com");
-//        mPasswordET.setText("123456");
-//        mLoginNameET.setText("jone988@protonmail.com");
-//        mPasswordET.setText("123456");
 //        mLoginNameET.setText("32339623@qq.com");
 //        mPasswordET.setText("123456");
 

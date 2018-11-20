@@ -18,6 +18,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.qkl.online.mining.app.R;
 import com.qkl.online.mining.app.application.AccountManager;
 import com.qkl.online.mining.app.data.commons.Constants;
+import com.qkl.online.mining.app.data.entity.AppCommonsConfig;
 import com.qkl.online.mining.app.data.entity.DictConfig;
 import com.qkl.online.mining.app.data.entity.MyStar;
 import com.qkl.online.mining.app.data.entity.MyYuntEntity;
@@ -260,9 +261,15 @@ public class StarFragment extends BaseFragment<StarPresenter> implements IStarVi
     @OnClick(R.id.fragment_star_make)
     void starMake() {
         // 星球预约
-        DictConfig dictConfig = AccountManager.getInstance().getDictConfig();
-        if(dictConfig != null) {
-            String reservationUrl = dictConfig.getReservationUrl();
+        AppCommonsConfig appCommonsConfig = AccountManager.getInstance().getAppCommonsConfig();
+        if(appCommonsConfig != null) {
+            String reservationUrl = appCommonsConfig.getReservationUrl();
+            if(TextUtils.isEmpty(reservationUrl)) {
+                DictConfig dictConfig = AccountManager.getInstance().getDictConfig();
+                if(dictConfig != null) {
+                    reservationUrl = dictConfig.getReservationUrl();
+                }
+            }
             if(!TextUtils.isEmpty(reservationUrl)) {
                 IntentUtil.ToWebViewActivity(getActivity(), getXmlString(R.string.public_star_make_txt), reservationUrl, true);
             }

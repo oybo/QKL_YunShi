@@ -20,6 +20,7 @@ import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+import com.qkl.online.mining.app.data.entity.AppCommonsConfig;
 import com.qkl.online.mining.app.data.entity.Earnings;
 import com.qkl.online.mining.app.data.entity.Exchange;
 import com.qkl.online.mining.app.data.entity.ExchangeDetail;
@@ -144,6 +145,17 @@ public class Convert {
             Type type = new TypeToken<GameBean>(){}.getType();
             GameBean gameBean = create().fromJson(jsonObject.toString(), type);
             return gameBean;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static AppCommonsConfig forAppCommonsConfig(JSONObject jsonObject) {
+        try {
+            Type type = new TypeToken<AppCommonsConfig>(){}.getType();
+            AppCommonsConfig appCommonsConfig = create().fromJson(jsonObject.toString(), type);
+            return appCommonsConfig;
         } catch (Exception e) {
             e.printStackTrace();
         }

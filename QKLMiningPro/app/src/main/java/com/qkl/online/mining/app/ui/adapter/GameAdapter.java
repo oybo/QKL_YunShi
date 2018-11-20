@@ -33,7 +33,7 @@ public class GameAdapter extends BaseQuickAdapter<GameBean.ListBean, BaseViewHol
         GlideImageLoader.loadImage(mContext, item.getGameImg(), imageView);
 
         helper.setText(R.id.item_game_name_txt, item.getGameName());
-        helper.setText(R.id.item_game_rulename_txt, item.getRuleName());
+        helper.setText(R.id.item_game_rulename_txt, item.getRuleDesc());
 
         // 0任务未完成,1任务已完成
         helper.setVisible(R.id.item_game_task_finish_view, item.getTaskStatus() == 1 ? true : false);

@@ -2,8 +2,12 @@ package com.qkl.online.mining.app.data.commons;
 
 import android.text.TextUtils;
 
+import com.qkl.online.mining.app.application.AppContext;
 import com.qkl.online.mining.app.data.entity.GameBean;
+import com.qkl.online.mining.app.utils.CommonsUtils;
 import com.qkl.online.mining.app.utils.languagelib.MultiLanguageUtil;
+
+import java.util.Random;
 
 /**
  * author：oyb on 2018/7/5 22:54
@@ -11,10 +15,11 @@ import com.qkl.online.mining.app.utils.languagelib.MultiLanguageUtil;
  */
 public class UrlConfig {
 
-    private static final String BASE_URL = "http://api.yunplanet.net";
+    private static final String BASE_URL = "https://api2.yunplanet.net";
 
     /**
      * 发送验证码    -   注册
+     *
      * @return
      */
     public static final String getSendCodeUrl() {
@@ -23,6 +28,7 @@ public class UrlConfig {
 
     /**
      * 发送验证码    -   找回密码
+     *
      * @return
      */
     public static final String getSendCodeByForgetUrl() {
@@ -31,6 +37,7 @@ public class UrlConfig {
 
     /**
      * 提交注册
+     *
      * @return
      */
     public static final String getRegisterUserUrl() {
@@ -39,6 +46,7 @@ public class UrlConfig {
 
     /**
      * 忘记密码
+     *
      * @return
      */
     public static final String getForgetPasswordUrl() {
@@ -47,6 +55,7 @@ public class UrlConfig {
 
     /**
      * 修改密码
+     *
      * @return
      */
     public static final String getChangePasswordUrl() {
@@ -55,6 +64,7 @@ public class UrlConfig {
 
     /**
      * 忘记支付密码
+     *
      * @return
      */
     public static final String getForgetPayPasswordUrl() {
@@ -63,6 +73,7 @@ public class UrlConfig {
 
     /**
      * 修改支付密码
+     *
      * @return
      */
     public static final String getChangePayPasswordUrl() {
@@ -71,6 +82,7 @@ public class UrlConfig {
 
     /**
      * 登录
+     *
      * @return
      */
     public static final String getLoginUrl() {
@@ -79,6 +91,7 @@ public class UrlConfig {
 
     /**
      * 注销
+     *
      * @return
      */
     public static final String getLogOutUrl() {
@@ -87,6 +100,7 @@ public class UrlConfig {
 
     /**
      * 首页banner
+     *
      * @return
      */
     public static final String getHomeBanner() {
@@ -95,6 +109,7 @@ public class UrlConfig {
 
     /**
      * 首页新闻公告/滚动信息/常见问题
+     *
      * @return
      */
     public static final String getHomeNews() {
@@ -103,6 +118,7 @@ public class UrlConfig {
 
     /**
      * 首页获取YUN汇率列表-价格曲线图
+     *
      * @return
      */
     public static final String getHomeYunExchangerateUrl() {
@@ -111,6 +127,7 @@ public class UrlConfig {
 
     /**
      * 获取实时汇率接口
+     *
      * @return
      */
     public static final String getYunExchangerateUrl() {
@@ -119,6 +136,7 @@ public class UrlConfig {
 
     /**
      * 个人信息
+     *
      * @return
      */
     public static final String getUserInfoUrl(String memberId) {
@@ -127,6 +145,7 @@ public class UrlConfig {
 
     /**
      * YUNT提币接口
+     *
      * @return
      */
     public static final String getYunt2YunUrl() {
@@ -135,6 +154,7 @@ public class UrlConfig {
 
     /**
      * YUNT--YUN兑换账单接口
+     *
      * @return
      */
     public static final String getExchangeListUrl() {
@@ -143,6 +163,7 @@ public class UrlConfig {
 
     /**
      * YUNT--YUN兑换账单接口-详情接口
+     *
      * @return
      */
     public static final String getExchangeDetailUrl() {
@@ -151,6 +172,7 @@ public class UrlConfig {
 
     /**
      * 兑换详情- 检查Txid
+     *
      * @return
      */
     public static final String getCheckTxidUrl(String txid) {
@@ -159,6 +181,7 @@ public class UrlConfig {
 
     /**
      * 获取用户YUNT账户信息
+     *
      * @return
      */
     public static final String getUserYuntDataUrl(String memberId) {
@@ -167,6 +190,7 @@ public class UrlConfig {
 
     /**
      * YUNT账单流水接口   -   收益详情
+     *
      * @return
      */
     public static final String getJieDianEarningsUrl() {
@@ -175,6 +199,7 @@ public class UrlConfig {
 
     /**
      * 上传头像
+     *
      * @return
      */
     public static final String getUploadProfileUrl(String memberId) {
@@ -183,6 +208,7 @@ public class UrlConfig {
 
     /**
      * 上传头像
+     *
      * @return
      */
     public static final String getSetUserInfoUrl() {
@@ -191,6 +217,7 @@ public class UrlConfig {
 
     /**
      * 获取矿机列表接口
+     *
      * @return
      */
     public static final String getMinerListUrl() {
@@ -199,6 +226,7 @@ public class UrlConfig {
 
     /**
      * 我的星球接口
+     *
      * @return
      */
     public static final String getMyStarListUrl(String memberId) {
@@ -207,6 +235,7 @@ public class UrlConfig {
 
     /**
      * 今日剩余星球数
+     *
      * @return
      */
     public static final String getTodayStarRestNumberUrl() {
@@ -215,6 +244,7 @@ public class UrlConfig {
 
     /**
      * 购买星球=矿机
+     *
      * @return
      */
     public static final String getPurchaseStarUrl() {
@@ -223,6 +253,7 @@ public class UrlConfig {
 
     /**
      * 获取游戏列表接口
+     *
      * @return
      */
     public static final String getGameList() {
@@ -231,6 +262,7 @@ public class UrlConfig {
 
     /**
      * 设置YUN钱包地址接口
+     *
      * @return
      */
     public static final String getYunAddressUrl() {
@@ -239,6 +271,7 @@ public class UrlConfig {
 
     /**
      * 获得用户列表/我的团队接口
+     *
      * @return
      */
     public static final String getTeamUrl() {
@@ -247,6 +280,7 @@ public class UrlConfig {
 
     /**
      * 获取系统配置字典接口
+     *
      * @return
      */
     public static final String getCommonsConfigUrl() {
@@ -254,7 +288,20 @@ public class UrlConfig {
     }
 
     /**
+     * 获取系统配置字典接口
+     *
+     * @return
+     */
+    public static final String getYunPlanetConfigUrl() {
+        String version = CommonsUtils.getSoftVersionName(AppContext.getInstance());
+        return "http://config.yunplanet.net/config.aspx?v="
+                + version + "&from=android&t="
+                + System.currentTimeMillis() + "&mode=ali";
+    }
+
+    /**
      * 矿池实时数据接口
+     *
      * @return
      */
     public static final String getPoolConfigUrl() {
